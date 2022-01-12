@@ -1,10 +1,9 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import Image from 'next/image';
+import styles from '../styles/Home.module.css';
 
-const Home: NextPage = () => {
-  return (
+const Home: NextPage = () => (
     <div className={styles.container}>
       <Head>
         <title>Create Next App</title>
@@ -66,7 +65,6 @@ const Home: NextPage = () => {
         </a>
       </footer>
     </div>
-  )
-}
+  );
 
-export default Home
+export default Home;
