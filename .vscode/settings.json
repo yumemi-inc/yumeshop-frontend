@@ -7,7 +7,7 @@
   },
   "[css]": {
     // このプロジェクトでは”stylelint”を導入していない為、明示的にtrueを指定
-    "editor.formatOnSave": false
+    "editor.formatOnSave": true
   },
   "editor.formatOnSave": true
 }
