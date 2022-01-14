@@ -1,6 +1,6 @@
 
 /** @type {import('eslint/lib/shared/types').ConfigData} */
-module.exports = {
+module.exports = ({
   root: true,
   extends: [
     'plugin:react/recommended',
@@ -46,4 +46,4 @@ module.exports = {
     ],
     'react/jsx-props-no-spreading': 'off',
   },
-};
+});
