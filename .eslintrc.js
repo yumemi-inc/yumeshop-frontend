@@ -27,6 +27,15 @@ module.exports = ({
         tsx: 'never',
       },
     ],
+    'import/no-extraneous-dependencies': [
+      'error', {
+        devDependencies: [
+          '**/*.test.{js,jsx,ts,tsx}',
+          '**/*.spec.{js,jsx,ts,ts}',
+          '**/jest.setup.js'
+        ]
+      }
+    ],
     '@typescript-eslint/no-unused-vars': [
       'error',
       {
