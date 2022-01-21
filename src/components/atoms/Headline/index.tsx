@@ -1,11 +1,11 @@
 import { VFC } from 'react';
 
-interface ButtonProps {
+interface HeadlineProps {
   label: string;
   headlineTypes: 'small' | 'middle' | 'large';
 }
 
-export const Headline: VFC<ButtonProps> = (props) => {
+export const Headline: VFC<HeadlineProps> = (props) => {
   const { label, headlineTypes } = props;
 
   return (
