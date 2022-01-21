@@ -1,9 +1,7 @@
-import { createGlobalStyle } from 'styled-components'
-import { reset } from 'styled-reset'
+import { createGlobalStyle } from 'styled-components';
+import 'ress';
 
-export const GlobalStyle = createGlobalStyle`
-  ${reset};
-
+export default createGlobalStyle`
   html,
   body {
     padding: 0;
@@ -20,4 +18,4 @@ export const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
   }
-`
+`;
