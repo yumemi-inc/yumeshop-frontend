@@ -27,15 +27,6 @@ module.exports = ({
         tsx: 'never',
       },
     ],
-    'import/no-extraneous-dependencies': [
-      'error', {
-        devDependencies: [
-          '**/__tests__/**/*.[jt]s?(x)',
-          '**/?(*.)+(spec|test).[jt]s?(x)',
-          '**/jest.setup.js'
-        ]
-      }
-    ],
     '@typescript-eslint/no-unused-vars': [
       'error',
       {
@@ -54,5 +45,9 @@ module.exports = ({
       },
     ],
     'react/jsx-props-no-spreading': 'off',
+    'import/no-extraneous-dependencies': ['error', {
+      // devDependenciesのimportを許容
+      devDependencies: true,
+    }]
   },
 });
