@@ -2,7 +2,7 @@
 株式会社ゆめみのフロンドインターン課題用の開発環境を提供します。
 
 ## Requirements
-- yarn
+- Yarn
 - Node.js 16.13.1
 
 ## Usage
@@ -10,7 +10,7 @@
 
 ## Development environment
 - [Node.js](https://nodejs.org/ja/)(v16.13.1)
-- [yarn](https://yarnpkg.com/)
+- [Yarn](https://yarnpkg.com/)
 - [Next.js](https://nextjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [styled-components](https://styled-components.com/)
