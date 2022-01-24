@@ -12,7 +12,7 @@
 - [Node.js](https://nodejs.org/ja/)(v16.13.1)
 - [yarn](https://yarnpkg.com/)
 - [Next.js](https://nextjs.org/)
-- [typeScript](https://www.typescriptlang.org/)
+- [TypeScript](https://www.typescriptlang.org/)
 - [styled-components](https://styled-components.com/)
   - 好みに合わせて以下のライブラリを使用しても問題ありません
     - [emotion](https://emotion.sh/docs/introduction)
