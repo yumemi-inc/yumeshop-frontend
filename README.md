@@ -30,3 +30,4 @@
 | lint: fix | eslintの実行と修正                                     |
 | format    | prettierの実行                                         |
 | fix       | format と lint:fix の実行                              |
+| test      | jestの実行                                             |
