@@ -45,5 +45,9 @@ module.exports = ({
       },
     ],
     'react/jsx-props-no-spreading': 'off',
+    'import/no-extraneous-dependencies': ['error', {
+      // devDependenciesのimportを許容
+      devDependencies: true,
+    }]
   },
 });
