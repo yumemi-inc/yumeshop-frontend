@@ -7,10 +7,15 @@ const OriginalNextImage = NextImage.default;
 Object.defineProperty(NextImage, 'default', {
   configurable: true,
   value: (props) => {
-    return (
-      <GlobalStyle>
-        <OriginalNextImage {...props} unoptimized />
-      </GlobalStyle>
-    );
+    return <OriginalNextImage {...props} unoptimized />;
   },
 });
+
+export const decorators = [
+  (Story) => (
+    <>
+      <GlobalStyle />
+      <Story />
+    </>
+  ),
+];
