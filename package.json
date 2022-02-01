@@ -9,8 +9,8 @@
     "lint:fix": "next lint --max-warnings 0 --fix",
     "format": "prettier --write --loglevel=warn '*/**/*.{js,jsx,ts,tsx,html,gql,graphql,json}'",
     "fix": "yarn format && yarn lint:fix",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook --output-dir ./build",
+    "storybook": "start-storybook -p 6006 -s ./public",
+    "build-storybook": "build-storybook -s public",
     "test": "jest"
   },
   "dependencies": {
