@@ -11,7 +11,7 @@ import {
   Grid,
   Card,
   Logo,
-} from '../style/Home';
+} from 'src/styles/Home';
 
 const Home: NextPage = () => (
   <Container>

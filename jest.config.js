@@ -5,6 +5,7 @@ module.exports = {
     '!**/node_modules/**',
   ],
   moduleNameMapper: {
+    "src(.*)$": "<rootDir>/src/$1",
     '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
   },
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
