@@ -11,6 +11,7 @@ import {
   Grid,
   Card,
   Logo,
+  TokenTest,
 } from 'src/styles/Home';
 
 const Home: NextPage = () => (
@@ -22,9 +23,11 @@ const Home: NextPage = () => (
     </Head>
 
     <Main>
-      <Title>
-        Welcome to <a href="https://nextjs.org">Next.js!</a>
-      </Title>
+      <TokenTest>
+        <Title>
+          Welcome to <a href="https://nextjs.org">Next.js!</a>
+        </Title>
+      </TokenTest>
 
       <Description>
         Get started by editing <Code>pages/index.tsx</Code>
