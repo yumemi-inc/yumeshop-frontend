@@ -2,12 +2,13 @@ import { createGlobalStyle } from 'styled-components';
 import 'ress';
 
 export default createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
   html,
   body {
     padding: 0;
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.5;
   }
 
   a {
