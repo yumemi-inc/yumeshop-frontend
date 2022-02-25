@@ -5,7 +5,12 @@
 
 version: 2
 updates:
-  - package-ecosystem: "npm" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  - package-ecosystem: 'npm' # See documentation for possible values
+    directory: '/' # Location of package manifests
     schedule:
-      interval: "daily"
+      interval: 'daily'
+      time: '10:00'
+      # Use Japan Standard Time (UTC +09:00)
+      timezone: 'Asia/Tokyo'
+    assignees:
+      - 'frontend_internship'
