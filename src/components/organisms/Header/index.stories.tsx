@@ -3,7 +3,7 @@ import { Header } from './index';
 
 export default {
   component: Header,
-  title: 'atoms/Header',
+  title: 'organisms/Header',
 } as Meta;
 
 const Template: Story = () => <Header />;
