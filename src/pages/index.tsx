@@ -23,6 +23,8 @@ const Home: NextPage = () => (
     </Head>
 
     <Main>
+      <Image src="/shopping-bag.jpg" alt="買い物袋" width={600} height={600} />
+
       <TokenTest>
         <Title>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
