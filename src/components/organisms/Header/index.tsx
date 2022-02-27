@@ -15,12 +15,10 @@ const Wrapper = styled.header`
 
 export const Header: VFC = () => (
   <Wrapper>
-    <Link href="/">
-      <a>
+    <Link href="/" passHref>
+      <a href="replace">
         <Logo />
       </a>
     </Link>
   </Wrapper>
 );
-// import/prefer-default-export
-export default Header;
