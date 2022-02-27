@@ -16,6 +16,3 @@ export const Headline: VFC<HeadlineProps> = (props) => {
     </>
   );
 };
-
-// import/prefer-default-export
-export default Headline;

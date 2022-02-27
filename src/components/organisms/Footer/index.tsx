@@ -17,5 +17,3 @@ export const Footer: VFC = () => (
     <p>Copyright {new Date().getFullYear()} YumemiShop</p>
   </Wrapper>
 );
-// import/prefer-default-export
-export default Footer;
