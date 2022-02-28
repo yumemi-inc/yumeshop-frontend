@@ -1,5 +1,8 @@
 /** @type {import('eslint/lib/shared/types').ConfigData} */
 module.exports = {
+  settings: {
+    'import/resolver': 'typescript',
+  },
   root: true,
   env: {
     browser: true,
