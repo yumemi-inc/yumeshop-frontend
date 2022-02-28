@@ -7,3 +7,8 @@ export const colors = {
   Gray: '#C4C4C4',
   Black: '#000000',
 } as const;
+
+export const fonts = {
+  NotoSansJP: `'Noto Sans JP', sans-serif`,
+  Roboto: `'Roboto', sans-serif`,
+} as const;
