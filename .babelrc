@@ -4,6 +4,10 @@
     [
       "styled-components",
       { "ssr": true, "displayName": true, "preprocess": false }
+    ],
+    [
+      "@babel/plugin-proposal-private-property-in-object",
+      { "loose": true }
     ]
   ]
 }
