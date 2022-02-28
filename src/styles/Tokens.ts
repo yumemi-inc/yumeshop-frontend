@@ -11,14 +11,14 @@ export const colors = {
 export const spacingSizes = {
   auto: 'auto',
   none: 'none',
-  xxxs: '0.125rem', // 2px
-  xxs: '0.25rem', // 4px
-  xs: '0.5rem', // 8px
-  sm: '1rem', // 16px
-  md: '2rem', // 32px
-  lg: '4rem', // 64px
-  xl: '8rem', // 128px
-  xxl: '16rem', // 256px
+  xxxs: '2px',
+  xxs: '4px',
+  xs: '8px',
+  sm: '16px',
+  md: '32px',
+  lg: '64px',
+  xl: '128px',
+  xxl: '256px',
 } as const;
 
 export const fontSizes = {
