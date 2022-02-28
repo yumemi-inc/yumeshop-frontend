@@ -22,7 +22,15 @@ export const spacingSizes = {
 } as const;
 
 export const fontSizes = {
-  small: '0.75rem', //12px
-  medium: '0.875rem', //14px
-  large: '1rem', //16px
+  fontSize12: '12px',
+  fontSize14: '14px',
+  fontSize16: '16px',
+  fontSize18: '18px',
+  fontSize20: '20px',
+  fontSize22: '22px',
+  fontSize24: '24px',
+  fontSize26: '26px',
+  fontSize28: '28px',
+  fontSize30: '30px',
+  fontSize32: '32px',
 } as const;
