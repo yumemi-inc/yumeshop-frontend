@@ -12,5 +12,5 @@ updates:
       time: '10:00'
       # Use Japan Standard Time (UTC +09:00)
       timezone: 'Asia/Tokyo'
-    assignees:
-      - 'frontend_internship'
+    reviewers:
+      - 'yumemi-inc/frontend_internship'
