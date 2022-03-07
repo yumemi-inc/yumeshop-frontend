@@ -34,3 +34,8 @@ export const fontSizes = {
   fontSize30: '30px',
   fontSize32: '32px',
 } as const;
+
+export const fonts = {
+  NotoSansJP: `'Noto Sans JP', sans-serif`,
+  Roboto: `'Roboto', sans-serif`,
+} as const;

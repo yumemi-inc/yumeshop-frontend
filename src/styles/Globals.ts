@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { fonts } from './Tokens';
 import 'ress';
 
 export default createGlobalStyle`
@@ -6,8 +7,8 @@ export default createGlobalStyle`
   body {
     padding: 0;
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: ${fonts['NotoSansJP']};
+    line-height: 1.5;
   }
 
   a {
