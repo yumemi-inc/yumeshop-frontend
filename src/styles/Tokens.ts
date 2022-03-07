@@ -10,7 +10,6 @@ export const colors = {
 
 export const spacingSizes = {
   auto: 'auto',
-  none: 'none',
   xxxs: '2px',
   xxs: '4px',
   xs: '8px',
