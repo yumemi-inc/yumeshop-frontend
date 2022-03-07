@@ -13,6 +13,8 @@ module.exports = {
     'plugin:react/recommended',
     'airbnb',
     'airbnb/hooks',
+    'plugin:import/recommended',
+    'plugin:import/typescript',
     'plugin:@typescript-eslint/recommended',
     'plugin:@next/next/recommended',
     'plugin:storybook/recommended',
@@ -52,7 +54,8 @@ module.exports = {
     'import/no-extraneous-dependencies': ['error', {
       // devDependenciesのimportを許容
       devDependencies: true
-    }]
+    }],
+    'storybook/prefer-pascal-case': 'off'
   },
   overrides: [
     {
@@ -62,4 +65,14 @@ module.exports = {
       },
     },
   ],
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true,
+      }
+    }
+  }
 };
