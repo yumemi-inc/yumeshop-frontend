@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { fonts } from './Tokens';
 import 'ress';
 
 export default createGlobalStyle`
@@ -6,7 +7,7 @@ export default createGlobalStyle`
   body {
     padding: 0;
     margin: 0;
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family: ${fonts['NotoSansJP']};
     line-height: 1.5;
   }
 
