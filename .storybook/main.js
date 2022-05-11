@@ -12,6 +12,15 @@ module.exports = {
       ...(baseConfig.resolve.modules || []),
       path.resolve(__dirname, '../'),
     ];
+    //@chakra-ui/storybook-addonのmjsが解決できないエラーの回避
+    baseConfig.module.rules = [
+      ...(baseConfig.module.rules || []),
+      {
+        test: /\.mjs$/,
+        include: /node_modules/,
+        type: 'javascript/auto',
+      },
+    ];
     return baseConfig;
   },
 };
