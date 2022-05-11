@@ -5,7 +5,6 @@ import { PicAndTextCard } from './index';
 export default {
   component: PicAndTextCard,
   title: 'molecules/PicAndTextCard',
-  argTypes: {},
 } as Meta;
 
 type PicAndTextCardProps = React.ComponentProps<typeof PicAndTextCard>;

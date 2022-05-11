@@ -8,16 +8,13 @@ interface PicAndTextCardProps extends BoxProps {
 
 /**
  * 画像とテキストを含むカード
- * @param title
- * @param thumbnailUrl
- * @param width
  */
 export const PicAndTextCard: VFC<PicAndTextCardProps> = ({
   title,
   thumbnailUrl,
-  width,
+  ...props
 }) => (
-  <Box borderRadius={8} shadow="base" overflow="hidden" width={width}>
+  <Box borderRadius={8} shadow="base" overflow="hidden" {...props}>
     <Center>
       <Image src={thumbnailUrl} alt={title} />
     </Center>
