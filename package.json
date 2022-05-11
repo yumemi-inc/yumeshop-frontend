@@ -14,6 +14,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^1.1.7",
     "@chakra-ui/react": "^1.8.8",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
@@ -23,6 +24,7 @@
     "react-dom": "17.0.2"
   },
   "devDependencies": {
+    "@chakra-ui/storybook-addon": "^1.0.3",
     "@next/eslint-plugin-next": "^12.1.0",
     "@storybook/addon-actions": "^6.4.14",
     "@storybook/addon-essentials": "^6.4.19",
