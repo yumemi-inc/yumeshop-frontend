@@ -19,3 +19,10 @@ General.args = {
   thumbnailUrl: 'https://picsum.photos/300/200',
   width: '200px',
 };
+
+export const FitContent = Template.bind({});
+FitContent.args = {
+  title: '文房具セール',
+  thumbnailUrl: 'https://picsum.photos/300/200',
+  width: 'fit-content',
+};
