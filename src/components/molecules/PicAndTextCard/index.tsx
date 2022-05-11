@@ -1,4 +1,4 @@
-import { Box, Image, Text, BoxProps } from '@chakra-ui/react';
+import { Box, Image, Text, BoxProps, Center } from '@chakra-ui/react';
 import React, { VFC } from 'react';
 
 interface PicAndTextCardProps extends BoxProps {
@@ -18,7 +18,9 @@ export const PicAndTextCard: VFC<PicAndTextCardProps> = ({
   width,
 }) => (
   <Box borderRadius={8} shadow="base" overflow="hidden" width={width}>
-    <Image src={thumbnailUrl} alt={title} />
+    <Center>
+      <Image src={thumbnailUrl} alt={title} />
+    </Center>
     <Box p={2}>
       <Text fontSize="sm">{title}</Text>
     </Box>
