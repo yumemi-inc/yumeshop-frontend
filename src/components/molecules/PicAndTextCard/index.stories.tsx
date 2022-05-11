@@ -16,7 +16,7 @@ const Template: Story<PicAndTextCardProps> = (args) => (
 
 export const General = Template.bind({});
 General.args = {
-  key: '57c3ff77-d8bd-41bb-86e3-4526e1b2186c',
   title: '文房具セール',
   thumbnailUrl: 'https://picsum.photos/300/200',
+  width: '200px',
 };
