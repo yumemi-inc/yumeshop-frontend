@@ -17,6 +17,7 @@ export const General = Template.bind({});
 General.args = {
   title: '文房具セール',
   thumbnailUrl: 'https://picsum.photos/300/200',
+  href: '#',
   width: '200px',
 };
 
@@ -24,5 +25,6 @@ export const FitContent = Template.bind({});
 FitContent.args = {
   title: '文房具セール',
   thumbnailUrl: 'https://picsum.photos/300/200',
+  href: '#',
   width: 'fit-content',
 };

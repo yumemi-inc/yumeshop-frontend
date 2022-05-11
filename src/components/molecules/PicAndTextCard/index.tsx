@@ -1,9 +1,19 @@
-import { Box, Image, Text, BoxProps, Center } from '@chakra-ui/react';
+import {
+  Box,
+  Image,
+  Text,
+  BoxProps,
+  Center,
+  LinkBox,
+  LinkOverlay,
+} from '@chakra-ui/react';
 import React, { VFC } from 'react';
+import NextLink from 'next/link';
 
 interface PicAndTextCardProps extends BoxProps {
   title: string;
   thumbnailUrl: string;
+  href: string;
 }
 
 /**
@@ -12,14 +22,19 @@ interface PicAndTextCardProps extends BoxProps {
 export const PicAndTextCard: VFC<PicAndTextCardProps> = ({
   title,
   thumbnailUrl,
+  href,
   ...props
 }) => (
-  <Box borderRadius={8} shadow="base" overflow="hidden" {...props}>
+  <LinkBox borderRadius={8} shadow="base" overflow="hidden" {...props}>
     <Center>
       <Image src={thumbnailUrl} alt={title} />
     </Center>
     <Box p={2}>
-      <Text fontSize="sm">{title}</Text>
+      <NextLink href={href} passHref>
+        <LinkOverlay>
+          <Text fontSize="sm">{title}</Text>
+        </LinkOverlay>
+      </NextLink>
     </Box>
-  </Box>
+  </LinkBox>
 );
