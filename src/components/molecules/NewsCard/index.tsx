@@ -8,8 +8,9 @@ import {
   LinkBox,
   LinkOverlay,
 } from '@chakra-ui/react';
-import React, { VFC } from 'react';
+import React, { useMemo, VFC } from 'react';
 import NextLink from 'next/link';
+import { dateToYYYYMMDD } from 'src/libs/util/dateToYYYYMMDD';
 
 interface Tag {
   key: string;
@@ -24,24 +25,37 @@ interface NewsCard extends BoxProps {
   href: string;
 }
 
-export const NewsCard: VFC<NewsCard> = ({ title, tags, href, ...props }) => (
-  <LinkBox borderRadius={8} shadow="base" p={2} {...props}>
-    <Stack>
-      <HStack>
-        <Heading size="sm">2022/05/11</Heading>
+export const NewsCard: VFC<NewsCard> = ({
+  title,
+  date,
+  tags,
+  href,
+  ...props
+}) => {
+  const dateStr = useMemo(() => dateToYYYYMMDD(date), [date]);
+  return (
+    <LinkBox borderRadius={8} shadow="base" p={2} {...props}>
+      <Stack>
         <HStack>
-          {tags.map((tag) => (
-            <Tag key={tag.key} backgroundColor={tag.color} borderRadius="none">
-              {tag.name}
-            </Tag>
-          ))}
+          <Heading size="sm">{dateStr}</Heading>
+          <HStack>
+            {tags.map((tag) => (
+              <Tag
+                key={tag.key}
+                backgroundColor={tag.color}
+                borderRadius="none"
+              >
+                {tag.name}
+              </Tag>
+            ))}
+          </HStack>
         </HStack>
-      </HStack>
-      <NextLink href={href} passHref>
-        <LinkOverlay>
-          <Text noOfLines={2}>{title}</Text>
-        </LinkOverlay>
-      </NextLink>
-    </Stack>
-  </LinkBox>
-);
+        <NextLink href={href} passHref>
+          <LinkOverlay>
+            <Text noOfLines={2}>{title}</Text>
+          </LinkOverlay>
+        </NextLink>
+      </Stack>
+    </LinkBox>
+  );
+};

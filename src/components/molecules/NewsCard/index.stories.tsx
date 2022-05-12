@@ -13,7 +13,7 @@ const Template: Story<NewsCardProps> = (args) => <NewsCard {...args} />;
 export const General = Template.bind({});
 General.args = {
   title: 'メンテナンスのお知らせ',
-  date: new Date(2022, 4, 11),
+  date: new Date(2020, 12 - 1, 23),
   href: '#',
   tags: [
     {
