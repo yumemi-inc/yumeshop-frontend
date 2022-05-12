@@ -15,7 +15,15 @@ export const PicAndTextCardList: VFC<PicAndTextCardListProps> = ({
   cards,
   cardWidth,
 }) => (
-  <Flex gap={4} overflowX="auto" p={2}>
+  <Flex
+    gap={4}
+    overflowX="auto"
+    p={2}
+    wrap={{
+      base: 'nowrap',
+      lg: 'wrap',
+    }}
+  >
     {cards.map((card) => (
       <PicAndTextCard width={cardWidth} flexShrink={0} {...card} />
     ))}
