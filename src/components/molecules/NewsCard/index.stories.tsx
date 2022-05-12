@@ -1,5 +1,5 @@
-import { NewsCard } from 'src/components/molecules/NewsCard/index';
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
+import { NewsCard } from './index';
 
 export default {
   component: NewsCard,
@@ -9,18 +9,16 @@ export default {
 export const General: ComponentStoryObj<typeof NewsCard> = {
   args: {
     title: 'メンテナンスのお知らせ',
-    date: new Date(2020, 12 - 1, 23),
+    date: new Date('2017-07-21T17:32:28Z'),
     href: '#',
     tags: [
       {
-        key: '57c3ff77-d8bd-41bb-86e3-4526e1b2186c',
         name: '重要',
-        color: '#E20E20',
+        backGroundColor: 'red',
       },
       {
-        key: '57c3ff77-d8bd-41bb-86e3-4526e1b2186d',
         name: 'メンテナンス',
-        color: '#E89244',
+        backGroundColor: 'yellow',
       },
     ],
   },
