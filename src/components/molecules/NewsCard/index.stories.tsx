@@ -19,12 +19,12 @@ General.args = {
     {
       key: '57c3ff77-d8bd-41bb-86e3-4526e1b2186c',
       name: '重要',
-      color: 'red',
+      color: '#E20E20',
     },
     {
       key: '57c3ff77-d8bd-41bb-86e3-4526e1b2186d',
       name: 'メンテナンス',
-      color: 'yellow',
+      color: '#E89244',
     },
   ],
 };

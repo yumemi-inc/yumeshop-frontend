@@ -42,8 +42,10 @@ export const NewsCard: VFC<NewsCard> = ({
             {tags.map((tag) => (
               <Tag
                 key={tag.key}
+                color="White"
                 backgroundColor={tag.color}
                 borderRadius="none"
+                fontSize="md"
               >
                 {tag.name}
               </Tag>
