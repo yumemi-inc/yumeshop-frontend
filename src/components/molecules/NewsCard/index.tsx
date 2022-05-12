@@ -4,24 +4,18 @@ import {
   HStack,
   Stack,
   Text,
-  Tag,
   LinkBox,
   LinkOverlay,
 } from '@chakra-ui/react';
-import React, { useMemo, VFC } from 'react';
+import React, { ComponentProps, useMemo, VFC } from 'react';
 import NextLink from 'next/link';
 import { dateToYYYYMMDD } from 'src/libs/util/dateToYYYYMMDD';
-
-interface Tag {
-  key: string;
-  name: string;
-  color: string;
-}
+import { ShopTag } from '../../atoms/ShopTag';
 
 interface NewsCard extends BoxProps {
   title: string;
   date: Date;
-  tags: Tag[];
+  tags: ComponentProps<typeof ShopTag>[];
   href: string;
 }
 
@@ -40,15 +34,7 @@ export const NewsCard: VFC<NewsCard> = ({
           <Heading size="sm">{dateStr}</Heading>
           <HStack>
             {tags.map((tag) => (
-              <Tag
-                key={tag.key}
-                color="White"
-                backgroundColor={tag.color}
-                borderRadius="none"
-                fontSize="md"
-              >
-                {tag.name}
-              </Tag>
+              <ShopTag key={`${tag.name}-${tag.backGroundColor}`} {...tag} />
             ))}
           </HStack>
         </HStack>
