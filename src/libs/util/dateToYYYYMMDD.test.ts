@@ -15,4 +15,14 @@ describe('dateToYYYYMMDD()のテスト', () => {
     const date = new Date(2022, 10 - 1, 20);
     expect(dateToYYYYMMDD(date, ' ')).toBe('2022 10 20');
   });
+
+  test('separatorに空文字列を指定した変換', () => {
+    const date = new Date(2022, 10 - 1, 20);
+    expect(dateToYYYYMMDD(date, '')).toBe('20221020');
+  });
+
+  test('separatorにundefinedを指定した変換', () => {
+    const date = new Date(2022, 10 - 1, 20);
+    expect(dateToYYYYMMDD(date, undefined)).toBe('2022/10/20');
+  });
 });
