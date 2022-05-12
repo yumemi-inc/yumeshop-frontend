@@ -20,6 +20,7 @@ interface ImageCarouselProps extends BoxProps {
 // breakpointは768以下
 const commonSetting: Settings = {
   dots: true,
+  dotsClass: 'slick-dots image-carousel-dots',
   infinite: true,
   centerMode: true,
   slidesToShow: 1,
@@ -60,5 +61,28 @@ export const ImageCarousel: VFC<ImageCarouselProps> = ({ items, ...props }) => (
         </Box>
       ))}
     </Slick>
+    <style global jsx>{`
+      .image-carousel-dots {
+        bottom: 8px;
+      }
+      .image-carousel-dots li {
+        margin: 0;
+      }
+      .image-carousel-dots li button {
+        width: 15px;
+        height: 15px;
+        padding: 0;
+      }
+      .image-carousel-dots li.slick-active button:before {
+        font-size: 15px;
+        color: black;
+        opacity: 1;
+      }
+      .image-carousel-dots li button:before {
+        font-size: 15px;
+        color: white;
+        opacity: 1;
+      }
+    `}</style>
   </Box>
 );
