@@ -8,6 +8,8 @@ export default {
 
 export const General: ComponentStoryObj<typeof ImageCarousel> = {
   args: {
+    height: '600px',
+    width: '800px',
     items: [
       {
         key: '57c3ff77-d8bd-41bb-86e3-4526e1b2186c',
