@@ -8,13 +8,9 @@ interface Card extends ComponentProps<typeof PicAndTextCard> {
 
 interface PicAndTextCardListProps {
   cards: Card[];
-  cardWidth?: Card['width'];
 }
 
-export const PicAndTextCardList: VFC<PicAndTextCardListProps> = ({
-  cards,
-  cardWidth,
-}) => (
+export const PicAndTextCardList: VFC<PicAndTextCardListProps> = ({ cards }) => (
   <Flex
     gap={4}
     overflowX="auto"
@@ -25,7 +21,7 @@ export const PicAndTextCardList: VFC<PicAndTextCardListProps> = ({
     }}
   >
     {cards.map((card) => (
-      <PicAndTextCard width={cardWidth} flexShrink={0} {...card} />
+      <PicAndTextCard flexShrink={0} {...card} />
     ))}
   </Flex>
 );
