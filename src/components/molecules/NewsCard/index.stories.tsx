@@ -23,3 +23,20 @@ export const General: ComponentStoryObj<typeof NewsCard> = {
     ],
   },
 };
+
+export const WithoutLink: ComponentStoryObj<typeof NewsCard> = {
+  args: {
+    title: 'メンテナンスのお知らせ',
+    date: new Date('2017-07-21T17:32:28Z'),
+    tags: [
+      {
+        name: '重要',
+        backGroundColor: 'red',
+      },
+      {
+        name: 'メンテナンス',
+        backGroundColor: 'yellow',
+      },
+    ],
+  },
+};
