@@ -26,7 +26,7 @@ export const General: ComponentStoryObj<typeof NewsCardList> = {
         ],
       },
       {
-        key: '57c3ff77-d8bd-41bb-86e3-4526e1b2186c',
+        key: '57c3ff77-d8bd-41bb-86e3-4526e1b2186e',
         title: 'メンテナンスのお知らせ',
         date: new Date('2017-07-21T17:32:28Z'),
         href: '#',
@@ -42,7 +42,7 @@ export const General: ComponentStoryObj<typeof NewsCardList> = {
         ],
       },
       {
-        key: '57c3ff77-d8bd-41bb-86e3-4526e1b2186c',
+        key: '57c3ff77-d8bd-41bb-86e3-4526e1b2186d',
         title: 'メンテナンスのお知らせ',
         date: new Date('2017-07-21T17:32:28Z'),
         href: '#',
