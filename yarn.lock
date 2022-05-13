@@ -4793,7 +4793,7 @@ asn1.js@^5.2.0:
     minimalistic-assert "^1.0.0"
     safer-buffer "^2.1.0"
 
-aspida@^1.7.1:
+aspida@^1.10.1, aspida@^1.7.1:
   version "1.10.1"
   resolved "https://registry.yarnpkg.com/aspida/-/aspida-1.10.1.tgz#fe536c53dae1a89311d88547fdb5fbd3b0ad1696"
   integrity sha512-m7Q3SPCJWzL9TOgynqneaHNAJFT5apGySc1l2gq6N7E4QROe/B+tdFBMfNKm4Iles6XgXr61+rfym99j104Snw==
