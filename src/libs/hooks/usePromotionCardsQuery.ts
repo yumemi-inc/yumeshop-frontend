@@ -1,21 +1,20 @@
-
-import { PicAndTextCardListItem } from 'src/components/molecules/PicAndTextCardList';
 import { useAspidaQuery } from '@aspida/react-query';
 import { useMemo } from 'react';
 import assert from 'assert';
+import { CarouselItemProps } from 'src/components/molecules/ImageCarousel';
 import { client } from '../aspida/client';
 
-export const usePromotionCardsQuery = (href: string) => {
-  const { data } = useAspidaQuery(client.categories);
+export const usePromotionCardsQuery = () => {
+  const { data } = useAspidaQuery(client.promotions);
   assert(data); // suspenseなのでundefinedにはならない
-  return useMemo<PicAndTextCardListItem[]>(
+  return useMemo<CarouselItemProps[]>(
     () =>
       data.map((item) => ({
         key: item.id,
-        title: item.name,
-        thumbnailUrl: item.thumbnail,
-        href,
+        alt: item.title,
+        imageUrl: item.image,
+        href: item.link,
       })),
-    [data, href],
+    [data],
   );
 };
