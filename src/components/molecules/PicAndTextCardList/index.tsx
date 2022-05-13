@@ -21,7 +21,6 @@ export const PicAndTextCardList: VFC<PicAndTextCardListProps> = ({
   <Flex
     gap={4}
     overflowX="auto"
-    p={2}
     wrap={{
       base: 'nowrap',
       lg: 'wrap',
