@@ -9,7 +9,7 @@ export interface PicAndTextCardListItem extends PicAndTextCardProps {
   key: string;
 }
 
-interface PicAndTextCardListProps {
+export interface PicAndTextCardListProps {
   cards: (PicAndTextCardListItem & BoxProps)[];
 }
 
