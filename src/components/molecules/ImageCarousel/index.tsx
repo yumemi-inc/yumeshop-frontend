@@ -6,7 +6,7 @@ import NextLink from 'next/link';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-interface Item {
+export interface CarouselItemProps {
   key: string;
   alt: string;
   imageUrl: string;
@@ -14,7 +14,7 @@ interface Item {
 }
 
 interface ImageCarouselProps extends BoxProps {
-  items: Item[];
+  items: CarouselItemProps[];
 }
 
 // breakpointは768以下

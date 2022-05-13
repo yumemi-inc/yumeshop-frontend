@@ -1,16 +1,23 @@
-import { ComponentProps, VFC } from 'react';
-import { PicAndTextCard } from 'src/components/molecules/PicAndTextCard';
-import { Flex } from '@chakra-ui/react';
+import { VFC } from 'react';
+import {
+  PicAndTextCard,
+  PicAndTextCardProps,
+} from 'src/components/molecules/PicAndTextCard';
+import { BoxProps, Flex } from '@chakra-ui/react';
 
-interface Card extends ComponentProps<typeof PicAndTextCard> {
+export interface PicAndTextCardListItem extends PicAndTextCardProps {
   key: string;
 }
 
-interface PicAndTextCardListProps {
-  cards: Card[];
+export interface PicAndTextCardListProps {
+  cards: PicAndTextCardListItem[];
+  cardStyle?: BoxProps;
 }
 
-export const PicAndTextCardList: VFC<PicAndTextCardListProps> = ({ cards }) => (
+export const PicAndTextCardList: VFC<PicAndTextCardListProps> = ({
+  cards,
+  cardStyle,
+}) => (
   <Flex
     gap={4}
     overflowX="auto"
@@ -21,7 +28,7 @@ export const PicAndTextCardList: VFC<PicAndTextCardListProps> = ({ cards }) => (
     }}
   >
     {cards.map((card) => (
-      <PicAndTextCard flexShrink={0} {...card} />
+      <PicAndTextCard flexShrink={0} {...card} {...cardStyle} />
     ))}
   </Flex>
 );

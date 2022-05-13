@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
-import { PicAndTextCardList } from 'src/components/molecules/PicAndTextCardList/index';
+import { PicAndTextCardList } from './index';
 
 export default {
   component: PicAndTextCardList,
@@ -7,7 +7,6 @@ export default {
 } as ComponentMeta<typeof PicAndTextCardList>;
 
 const baseCard = {
-  width: '200px',
   href: '#',
   thumbnailUrl: 'https://picsum.photos/300/200',
 };
@@ -40,5 +39,8 @@ export const General: ComponentStoryObj<typeof PicAndTextCardList> = {
         ...baseCard,
       },
     ],
+    cardStyle: {
+      width: '200px',
+    },
   },
 };

@@ -10,7 +10,7 @@ import {
 import React, { VFC } from 'react';
 import NextLink from 'next/link';
 
-interface PicAndTextCardProps extends BoxProps {
+export interface PicAndTextCardProps {
   title: string;
   thumbnailUrl: string;
   href: string;
@@ -19,7 +19,7 @@ interface PicAndTextCardProps extends BoxProps {
 /**
  * 画像とテキストを含むカード
  */
-export const PicAndTextCard: VFC<PicAndTextCardProps> = ({
+export const PicAndTextCard: VFC<PicAndTextCardProps & BoxProps> = ({
   title,
   thumbnailUrl,
   href,

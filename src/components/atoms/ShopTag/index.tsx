@@ -1,13 +1,13 @@
 import React, { VFC } from 'react';
 import { Tag } from '@chakra-ui/react';
 
-interface TagProps {
+export interface ShopTagProps {
   name: string;
   backGroundColor: string;
   textColor?: string;
 }
 
-export const ShopTag: VFC<TagProps> = ({
+export const ShopTag: VFC<ShopTagProps> = ({
   name,
   backGroundColor,
   textColor = 'White',
