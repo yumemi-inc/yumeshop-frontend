@@ -7,13 +7,14 @@ export interface NewsCardListItem extends NewsCardProps {
 }
 
 export interface NewsCardListProps {
-  cards: (NewsCardListItem & BoxProps)[];
+  cards: NewsCardListItem[];
+  cardStyle?: BoxProps;
 }
 
-export const NewsCardList: VFC<NewsCardListProps> = ({ cards }) => (
+export const NewsCardList: VFC<NewsCardListProps> = ({ cards, cardStyle }) => (
   <Stack>
     {cards.map((card) => (
-      <NewsCard {...card} />
+      <NewsCard {...card} {...cardStyle} />
     ))}
   </Stack>
 );
