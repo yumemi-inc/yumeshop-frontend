@@ -1,25 +1,21 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
-
-import { Container, Main, Title, TokenTest } from 'src/styles/Home';
+import { Box } from '@chakra-ui/react';
+import { TopPage } from 'src/components/page/Top';
+import { Header } from 'src/components/organisms/Header';
+import { Footer } from 'src/components/organisms/Footer';
 
 const Home: NextPage = () => (
-  <Container>
+  <Box>
     <Head>
       <title>Yumeshop</title>
       <meta name="description" content="" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
-
-    <Main>
-      <Image src="/shopping-bag.jpg" alt="買い物袋" width={600} height={600} />
-
-      <TokenTest>
-        <Title>Welcome to Yumeshop</Title>
-      </TokenTest>
-    </Main>
-  </Container>
+    <Header />
+    <TopPage />
+    <Footer />
+  </Box>
 );
 
 export default Home;
