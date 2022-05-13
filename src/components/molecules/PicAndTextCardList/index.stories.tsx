@@ -7,7 +7,6 @@ export default {
 } as ComponentMeta<typeof PicAndTextCardList>;
 
 const baseCard = {
-  width: '200px',
   href: '#',
   thumbnailUrl: 'https://picsum.photos/300/200',
 };
@@ -40,5 +39,8 @@ export const General: ComponentStoryObj<typeof PicAndTextCardList> = {
         ...baseCard,
       },
     ],
+    cardStyle: {
+      width: '200px',
+    },
   },
 };

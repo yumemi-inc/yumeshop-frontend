@@ -10,10 +10,14 @@ export interface PicAndTextCardListItem extends PicAndTextCardProps {
 }
 
 export interface PicAndTextCardListProps {
-  cards: (PicAndTextCardListItem & BoxProps)[];
+  cards: PicAndTextCardListItem[];
+  cardStyle?: BoxProps;
 }
 
-export const PicAndTextCardList: VFC<PicAndTextCardListProps> = ({ cards }) => (
+export const PicAndTextCardList: VFC<PicAndTextCardListProps> = ({
+  cards,
+  cardStyle,
+}) => (
   <Flex
     gap={4}
     overflowX="auto"
@@ -24,7 +28,7 @@ export const PicAndTextCardList: VFC<PicAndTextCardListProps> = ({ cards }) => (
     }}
   >
     {cards.map((card) => (
-      <PicAndTextCard flexShrink={0} {...card} />
+      <PicAndTextCard flexShrink={0} {...card} {...cardStyle} />
     ))}
   </Flex>
 );
