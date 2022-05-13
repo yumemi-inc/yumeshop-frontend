@@ -6,7 +6,7 @@ export interface NewsCardListItem extends NewsCardProps {
   key: string;
 }
 
-interface NewsCardListProps {
+export interface NewsCardListProps {
   cards: (NewsCardListItem & BoxProps)[];
 }
 
