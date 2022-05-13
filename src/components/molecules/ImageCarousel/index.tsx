@@ -27,6 +27,8 @@ const commonSetting: Settings = {
   arrows: false,
   centerPadding: '0px',
   variableWidth: true,
+  autoplay: true,
+  autoplaySpeed: 5000,
   responsive: [
     {
       breakpoint: 768,
