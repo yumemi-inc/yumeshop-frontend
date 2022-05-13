@@ -13,14 +13,14 @@ import NextLink from 'next/link';
 import { dateToYYYYMMDD } from 'src/libs/util/dateToYYYYMMDD';
 import { ShopTag } from '../../atoms/ShopTag';
 
-interface NewsCard extends BoxProps {
+export interface NewsCardProps {
   title: string;
   date: Date;
   tags: ComponentProps<typeof ShopTag>[];
   href?: string;
 }
 
-export const NewsCard: VFC<NewsCard> = ({
+export const NewsCard: VFC<NewsCardProps & BoxProps> = ({
   title,
   date,
   tags,

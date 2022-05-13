@@ -1,16 +1,16 @@
-import { ComponentProps, VFC } from 'react';
-import { NewsCard } from 'src/components/molecules/NewsCard';
-import { Stack } from '@chakra-ui/react';
+import { VFC } from 'react';
+import { NewsCard, NewsCardProps } from 'src/components/molecules/NewsCard';
+import { BoxProps, Stack } from '@chakra-ui/react';
 
-interface Card extends ComponentProps<typeof NewsCard> {
+export interface NewsCardListItem extends NewsCardProps {
   key: string;
 }
 
-interface NewsCardProps {
-  cards: Card[];
+interface NewsCardListProps {
+  cards: (NewsCardListItem & BoxProps)[];
 }
 
-export const NewsCardList: VFC<NewsCardProps> = ({ cards }) => (
+export const NewsCardList: VFC<NewsCardListProps> = ({ cards }) => (
   <Stack>
     {cards.map((card) => (
       <NewsCard {...card} />
