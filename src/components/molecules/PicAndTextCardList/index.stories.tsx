@@ -1,5 +1,5 @@
 import { ComponentMeta, ComponentStoryObj } from '@storybook/react';
-import { PicAndTextCardList } from 'src/components/molecules/PicAndTextCardList/index';
+import { PicAndTextCardList } from './index';
 
 export default {
   component: PicAndTextCardList,
