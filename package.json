@@ -16,8 +16,8 @@
   "dependencies": {
     "@aspida/fetch": "^1.10.1",
     "@aspida/react-query": "^1.10.1",
-    "@chakra-ui/icons": "^1.1.7",
-    "@chakra-ui/react": "^1.8.8",
+    "@chakra-ui/icons": "^2.0.0",
+    "@chakra-ui/react": "^2.0.0",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
     "aspida": "^1.10.1",
@@ -30,8 +30,8 @@
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
-    "@chakra-ui/storybook-addon": "^1.0.3",
-    "@next/eslint-plugin-next": "^12.1.0",
+    "@chakra-ui/storybook-addon": "^2.0.0",
+    "@next/eslint-plugin-next": "^12.1.6",
     "@storybook/addon-actions": "^6.4.14",
     "@storybook/addon-essentials": "^6.4.19",
     "@storybook/addon-links": "^6.4.14",
