@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { TopPage } from 'src/components/page/Top';
+import { TopPage } from 'src/components/pages/Top';
 import { Header } from 'src/components/organisms/Header';
 import { Footer } from 'src/components/organisms/Footer';
 
