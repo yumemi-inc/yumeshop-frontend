@@ -1,14 +1,16 @@
+type Price = {
+  selling_price: number;
+  original_price: number;
+  discounted: boolean;
+  discount_percentage: number;
+  discount_amount: number;
+};
+
 export type ShopItem = {
   id: string;
   name: string;
   thumbnail: string;
-  price: {
-    selling_price: number;
-    original_price: number;
-    discounted: boolean;
-    discount_percentage: number;
-    discount_amount: number;
-  };
+  price: Price;
   tags: [
     {
       id: string;
