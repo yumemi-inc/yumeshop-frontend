@@ -1,6 +1,6 @@
 // .storybook/preview.js
 import * as NextImage from 'next/image';
-import GlobalStyle from '../src/styles/Globals';
+import { GlobalCss } from '../src/styles/GlobalCss';
 
 const OriginalNextImage = NextImage.default;
 
@@ -14,7 +14,7 @@ Object.defineProperty(NextImage, 'default', {
 export const decorators = [
   (Story) => (
     <>
-      <GlobalStyle />
+      <GlobalCss />
       <Story />
     </>
   ),
