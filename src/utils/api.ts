@@ -1,8 +1,6 @@
 import { Api } from 'src/types/api';
 import { isEmptyObj } from './isEmptyObj';
 
-const BASE_URL = 'http://localhost:3000';
-
 export type HttpMethod = 'GET' | 'POST' | 'PUT' | 'DELETE';
 
 export class HttpError extends Error {
@@ -77,11 +75,14 @@ export const fetchApi = async <T>(
 
   let result;
   try {
-    const res = await fetch(encodeURI(`${BASE_URL}${requestUrl}`), {
-      method,
-      body: isEmptyObj(requestParams) ? null : JSON.stringify(requestParams),
-      headers: { ...requestHeaders },
-    });
+    const res = await fetch(
+      encodeURI(`${process.env.NEXT_PUBLIC_API_BASE_URL}${requestUrl}`),
+      {
+        method,
+        body: isEmptyObj(requestParams) ? null : JSON.stringify(requestParams),
+        headers: { ...requestHeaders },
+      },
+    );
 
     if (!res.ok) {
       throw await HttpError.init(res);
