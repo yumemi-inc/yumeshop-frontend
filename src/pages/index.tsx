@@ -5,6 +5,7 @@ import { colors, fontSizes } from 'src/styles/Tokens';
 import { ShopItemDetail } from 'src/types/shopItem';
 import { getApi, ApiResponseError } from 'src/utils/api';
 import { Header } from 'src/components/layout/Header/Header';
+import { Footer } from 'src/components/layout/Footer';
 
 const Home: NextPage = () => {
   const [data, setData] = useState<ShopItemDetail>();
@@ -46,6 +47,8 @@ const Home: NextPage = () => {
       </button>
 
       {JSON.stringify(data)}
+
+      <Footer />
     </div>
   );
 };
