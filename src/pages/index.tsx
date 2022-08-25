@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { colors, fontSizes } from 'src/styles/Tokens';
 import { ShopItemDetail } from 'src/types/shopItem';
 import { getApi, ApiResponseError } from 'src/utils/api';
+import { Header } from 'src/components/layout/Header/Header';
 
 const Home: NextPage = () => {
   const [data, setData] = useState<ShopItemDetail>();
@@ -15,7 +16,7 @@ const Home: NextPage = () => {
         <meta name="description" content="" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <Header />
       <div
         css={{
           color: colors.Red,
