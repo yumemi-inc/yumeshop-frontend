@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import Link from 'next/link';
 import { FC } from 'react';
@@ -21,15 +22,17 @@ export const Footer: FC = () => (
     <div
       css={{ display: 'flex', flexDirection: 'column', gap: spacingSizes.xs }}
     >
-      {menus.map((menu) => (
+      {menus.map((menu, i) => (
         <div
+          key={i}
           css={{
             display: 'flex',
             gap: spacingSizes.xs,
           }}
         >
-          {menu.map((item) => (
+          {menu.map((item, j) => (
             <div
+              key={j}
               css={{
                 paddingRight: spacingSizes.xs,
                 borderRight: 'solid 1px',
