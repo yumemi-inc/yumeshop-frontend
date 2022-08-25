@@ -1,0 +1,24 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import Link from 'next/link';
+import { FC } from 'react';
+import { Logo } from 'src/components/common/Icons/Logo';
+import { colors, spacingSizes } from 'src/styles/Tokens';
+
+export const Header: FC = () => (
+  <header
+    css={{
+      width: '100%',
+      padding: `${spacingSizes.xs} 0`,
+      background: colors.White,
+      display: 'grid',
+      placeItems: 'center',
+      boxShadow: '0px 1px 4px rgba(0, 0, 0, 0.25);',
+    }}
+  >
+    <Link href="/">
+      <a>
+        <Logo />
+      </a>
+    </Link>
+  </header>
+);

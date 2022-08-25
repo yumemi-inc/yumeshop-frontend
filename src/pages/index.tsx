@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { colors, fontSizes } from 'src/styles/Tokens';
+import { Header } from 'src/components/layout/Header/Header';
 
 const Home: NextPage = () => (
   <div>
@@ -10,14 +10,7 @@ const Home: NextPage = () => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
 
-    <div
-      css={{
-        color: colors.Red,
-        fontSize: fontSizes.fontSize32,
-      }}
-    >
-      テスト
-    </div>
+    <Header />
   </div>
 );
 
