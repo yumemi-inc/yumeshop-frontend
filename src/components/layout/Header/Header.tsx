@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import Link from 'next/link';
 import { FC } from 'react';
 import { Logo } from 'src/components/common/Icons/Logo';
