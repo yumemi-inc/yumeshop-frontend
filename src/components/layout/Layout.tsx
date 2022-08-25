@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-
 import { FC, ReactNode } from 'react';
 import { colors } from 'src/styles/Tokens';
 import { Footer } from './Footer';
