@@ -8,11 +8,12 @@ export const Header: FC = () => (
   <header
     css={{
       width: '100%',
-      padding: `${spacingSizes.xs} 0`,
+      paddingTop: spacingSizes.xs,
+      paddingBottom: spacingSizes.xxs,
       background: colors.White,
       display: 'grid',
       placeItems: 'center',
-      boxShadow: '0px 1px 4px rgba(0, 0, 0, 0.25);',
+      boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25);',
     }}
   >
     <Link href="/">
