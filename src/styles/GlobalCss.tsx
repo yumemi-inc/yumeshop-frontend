@@ -6,8 +6,6 @@ export const GlobalCss: FC = () => (
   <Global
     styles={{
       'html,body': {
-        padding: 0,
-        margin: 0,
         fontFamily: fonts.NotoSansJP,
         lineHeight: 1.5,
       },
@@ -16,6 +14,8 @@ export const GlobalCss: FC = () => (
         textDecoration: 'none',
       },
       '*': {
+        padding: 0,
+        margin: 0,
         boxSizing: 'border-box',
       },
     }}
