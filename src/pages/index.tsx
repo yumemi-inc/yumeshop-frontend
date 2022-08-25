@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { useState } from 'react';
 import { colors, fontSizes } from 'src/styles/Tokens';
 import { ShopItemDetail } from 'src/types/shopItem';
-import { getApi, HttpError } from 'src/utils/api';
+import { getApi, ApiResponseError } from 'src/utils/api';
 
 const Home: NextPage = () => {
   const [data, setData] = useState<ShopItemDetail>();
@@ -34,7 +34,7 @@ const Home: NextPage = () => {
             });
             setData(res);
           } catch (error) {
-            if (error instanceof HttpError) {
+            if (error instanceof ApiResponseError) {
               // eslint-disable-next-line no-console
               console.error(error);
             }

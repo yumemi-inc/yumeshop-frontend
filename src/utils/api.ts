@@ -3,7 +3,7 @@ import { isEmptyObj } from './isEmptyObj';
 
 export type HttpMethod = 'GET' | 'POST' | 'PUT' | 'DELETE';
 
-export class HttpError extends Error {
+export class ApiResponseError extends Error {
   url: string;
 
   statusText: string;
@@ -12,7 +12,7 @@ export class HttpError extends Error {
 
   constructor(url: string, statusText: string, message: string) {
     super();
-    this.name = 'HttpError';
+    this.name = 'ApiResponseError';
     this.url = url;
     this.statusText = statusText;
     this.message = message;
@@ -20,7 +20,7 @@ export class HttpError extends Error {
 
   public static init = async (response: Response) => {
     const json = (await response.json()) as { message: string };
-    return new HttpError(
+    return new ApiResponseError(
       response.url,
       `${response.status} ${response.statusText}`,
       json.message,
@@ -85,11 +85,11 @@ export const fetchApi = async <T>(
     );
 
     if (!res.ok) {
-      throw await HttpError.init(res);
+      throw await ApiResponseError.init(res);
     }
     result = await res.json();
   } catch (error) {
-    if (error instanceof HttpError) {
+    if (error instanceof ApiResponseError) {
       throw error;
     }
   }
