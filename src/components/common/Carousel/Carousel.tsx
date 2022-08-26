@@ -57,6 +57,8 @@ export const Carousel: FC<CarouselProps> = ({
           {scrollSnaps.map((_, index) => (
             // eslint-disable-next-line jsx-a11y/control-has-associated-label
             <button
+              // eslint-disable-next-line react/no-array-index-key
+              key={index}
               css={{
                 width: 15,
                 height: 15,
