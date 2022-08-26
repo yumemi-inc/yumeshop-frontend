@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-types */
 
+import { Campaign } from './campaign';
 import { Promotion } from './promotion';
 import { ShopItem, ShopItemDetail } from './shopItem';
 
@@ -18,6 +19,7 @@ export type Api = Schema<{
     '/shop_items': [undefined, ShopItem[]];
     '/shop_items/:id': [{ id: string }, ShopItemDetail];
     '/promotions': [undefined, Promotion[]];
+    '/campaigns': [undefined, Campaign[]];
   };
   POST: {};
   PUT: {};
