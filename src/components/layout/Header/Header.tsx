@@ -6,6 +6,7 @@ import { colors, spacingSizes } from 'src/styles/Tokens';
 export const Header: FC = () => (
   <header
     css={{
+      zIndex: 1,
       width: '100%',
       paddingTop: spacingSizes.xs,
       paddingBottom: spacingSizes.xxs,
