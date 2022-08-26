@@ -1,6 +1,6 @@
-import { VFC } from 'react';
+import { FC } from 'react';
 
-export const Logo: VFC = () => (
+export const Logo: FC = () => (
   <svg
     width="113"
     height="29"
@@ -54,6 +54,3 @@ export const Logo: VFC = () => (
     />
   </svg>
 );
-
-// import/prefer-default-export
-export default Logo;

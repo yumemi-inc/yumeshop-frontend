@@ -52,7 +52,13 @@ module.exports = {
       // devDependenciesのimportを許容
       devDependencies: true
     }],
-    'storybook/prefer-pascal-case': 'off'
+    'storybook/prefer-pascal-case': 'off',
+    "jsx-a11y/anchor-is-valid": ["off", {
+      "components": ["Link"],
+      "specialLink": ["hrefLeft", "hrefRight"],
+      "aspects": ["noHref", "invalidHref", "preferButton"]
+    }],
+    "react/require-default-props":"off"
   },
   overrides: [
     {
