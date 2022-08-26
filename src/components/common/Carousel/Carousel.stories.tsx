@@ -8,9 +8,8 @@ export default {
 
 const Template: Story = (args) => (
   <Carousel {...args}>
-    {[...Array(7)].map((_, index) => (
-      // eslint-disable-next-line react/no-array-index-key
-      <div key={index} css={{ width: 300, height: 300, border: '1px solid' }} />
+    {[...Array(7)].map((num) => (
+      <div key={num} css={{ width: 300, height: 300, border: '1px solid' }} />
     ))}
   </Carousel>
 );

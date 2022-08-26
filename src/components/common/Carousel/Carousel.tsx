@@ -12,28 +12,28 @@ export const Carousel: FC<CarouselProps> = ({
   options = {},
   dotButton = false,
 }) => {
-  const [emblaRef, embla] = useEmblaCarousel(options);
+  const [viewportRef, carousel] = useEmblaCarousel(options);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
   const scrollTo = useCallback(
-    (index) => embla && embla.scrollTo(index),
-    [embla],
+    (index) => carousel && carousel.scrollTo(index),
+    [carousel],
   );
   const onSelect = useCallback(() => {
-    if (!embla) return;
-    setSelectedIndex(embla.selectedScrollSnap());
-  }, [embla, setSelectedIndex]);
+    if (!carousel) return;
+    setSelectedIndex(carousel.selectedScrollSnap());
+  }, [carousel, setSelectedIndex]);
 
   useEffect(() => {
-    if (!embla) return;
+    if (!carousel) return;
     onSelect();
-    setScrollSnaps(embla.scrollSnapList());
-    embla.on('select', onSelect);
-  }, [embla, setScrollSnaps, onSelect]);
+    setScrollSnaps(carousel.scrollSnapList());
+    carousel.on('select', onSelect);
+  }, [carousel, setScrollSnaps, onSelect]);
 
   return (
     <div css={{ position: 'relative' }}>
-      <div ref={emblaRef} css={{ overflow: 'hidden' }}>
+      <div ref={viewportRef} css={{ overflow: 'hidden' }}>
         <ul css={{ display: 'flex', listStyleType: 'none' }}>
           {children.map((child, index) => (
             // eslint-disable-next-line react/no-array-index-key
