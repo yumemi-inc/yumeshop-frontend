@@ -13,17 +13,19 @@ const Wrapper = styled.footer`
     display: flex;
     list-style: none;
   }
-  li {
-    padding-right: 4px;
-    padding-left: 4px;
-  }
   li + li {
-    list-style: "|";
+    padding-left: 4px;
+    &::before {
+      padding-right: 4px;
+      content: '|';
+    }
   }
   @media screen and (min-width: 1152px) {
-    li {
-      padding-right: 8px;
-      padding-left: 8px;
+    li + li {
+      padding-left: 4px;
+      &::before {
+        padding-right: 4px;
+      }
     }
   }
 `;
