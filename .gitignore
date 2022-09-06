@@ -40,4 +40,4 @@ yarn-error.log*
 !.vscode
 
 #openapi
-openapi
+openapig
