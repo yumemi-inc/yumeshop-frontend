@@ -20,7 +20,7 @@ const Wrapper = styled.footer`
   li + li {
     list-style: "|";
   }
-  @media screen and (width >= 1152px) {
+  @media screen and (min-width: 1152px) {
     li {
       padding-right: 8px;
       padding-left: 8px;
@@ -31,7 +31,7 @@ const Wrapper = styled.footer`
 const Copyright = styled.p`
   margin-top: 64px;
   text-align: center;
-  @media screen and (width >= 1152px) {
+  @media screen and (min-width: 1152px) {
     margin-top: 32px;
   }
 `;
