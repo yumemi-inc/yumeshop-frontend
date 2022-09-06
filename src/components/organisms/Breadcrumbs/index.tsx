@@ -22,13 +22,13 @@ const Wrapper = styled.div`
   }
   li {
     position: relative;
-  }
-  li > a {
-    display: block;
-    padding: 0.2em 0.5em;
-    background-color: ${colors.White};
-    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 4px;
+    a {
+      display: block;
+      padding: 0.2em 0.5em;
+      background-color: ${colors.White};
+      box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 4px;
+    }
   }
   li + li {
     &::before {
@@ -49,7 +49,7 @@ const Wrapper = styled.div`
 export const Breadcrumbs: VFC<BreadcrumbsProps> = ({ items }) => (
   <Wrapper>
     <ul>
-      {items.slice(0, items.length - 1).map(item => <li><a href={item.link_url}>{item.text}</a></li>)}
+      {items.slice(0, items.length - 1).map(item => <li key={item.link_url}><a href={item.link_url}>{item.text}</a></li>)}
       <li><span>{items[items.length - 1].text}</span></li>
     </ul>
   </Wrapper>
