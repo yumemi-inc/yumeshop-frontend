@@ -46,14 +46,6 @@ const Wrapper = styled.div`
   }
 `;
 
-const Copyright = styled.p`
-  margin-top: 64px;
-  text-align: center;
-  @media screen and (min-width: 1152px) {
-    margin-top: 32px;
-  }
-`;
-
 export const Breadcrumbs: VFC<BreadcrumbsProps> = ({ items }) => (
   <Wrapper>
     <ul>
