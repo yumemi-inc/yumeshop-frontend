@@ -2,6 +2,13 @@ import { VFC } from 'react';
 import styled from 'styled-components';
 import { colors } from 'src/styles/Tokens';
 
+type BreadcrumbsProps = {
+  items: {
+    link_url?: string;
+    text: string;
+  }[]
+}
+
 const Wrapper = styled.div`
   width: 100%;
   font-size: 12px;
@@ -10,7 +17,6 @@ const Wrapper = styled.div`
   ul {
     padding: 0.5em;
     justify-content: start;
-    column-count: 3;
     display: flex;
     list-style: none;
   }
@@ -39,7 +45,7 @@ const Wrapper = styled.div`
     padding: 0.2em 0em;
   }
 `;
-  
+
 const Copyright = styled.p`
   margin-top: 64px;
   text-align: center;
@@ -48,12 +54,11 @@ const Copyright = styled.p`
   }
 `;
 
-export const Breadcrumbs: VFC = () => (
+export const Breadcrumbs: VFC<BreadcrumbsProps> = ({ items }) => (
   <Wrapper>
     <ul>
-      <li><a href="temp1">メニューメニュー</a></li>
-      <li><a href="temp2">メニューメニュー</a></li>
-      <li><span>メニュー</span></li>
+      {items.slice(0, items.length - 1).map(item => <li><a href={item.link_url}>{item.text}</a></li>)}
+      <li><span>{items[items.length - 1].text}</span></li>
     </ul>
   </Wrapper>
 );
