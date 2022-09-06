@@ -39,3 +39,7 @@ export const fonts = {
   NotoSansJP: `'Noto Sans JP', sans-serif`,
   Roboto: `'Roboto', sans-serif`,
 } as const;
+
+export const breakPoints = {
+  pcDisplaySize: '1152px',
+} as const;
