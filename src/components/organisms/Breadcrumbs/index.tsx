@@ -22,13 +22,13 @@ const Wrapper = styled.div`
   }
   li {
     position: relative;
-  }
-  li > a {
-    display: block;
-    padding: 0.2em 0.5em;
-    background-color: ${colors.White};
-    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 4px;
+    a {
+      display: block;
+      padding: 0.2em 0.5em;
+      background-color: ${colors.White};
+      box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 4px;
+    }
   }
   li + li {
     &::before {
