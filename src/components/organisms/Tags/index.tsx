@@ -1,6 +1,5 @@
 import { VFC } from 'react';
 import styled from 'styled-components';
-import { colors } from 'src/styles/Tokens';
 import { Tag } from 'src/openapi/generated/typescript-fetch/models/Tag';
 
 type TagsProps = {
