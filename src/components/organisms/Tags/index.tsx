@@ -19,6 +19,6 @@ const Wrapper = styled.div`
 
 export const Tags: VFC<TagsProps> = ({ items }) => (
   <Wrapper>
-    {items.map(item => <span style={{ backgroundColor: item.color }} > { item.name } </span>)}
+    {items.map(item => <span style={{ backgroundColor: item.color }} key={item.name} > { item.name } </span>)}
   </Wrapper>
 );
