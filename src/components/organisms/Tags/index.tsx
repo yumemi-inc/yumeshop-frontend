@@ -1,6 +1,11 @@
 import { VFC } from 'react';
 import styled from 'styled-components';
 import { colors } from 'src/styles/Tokens';
+import { Tag } from 'src/openapi/generated/typescript-fetch/models/Tag';
+
+type TagsProps = {
+  items: Tag[]
+}
 
 const Wrapper = styled.div`
   font-size: 12px;
@@ -13,10 +18,8 @@ const Wrapper = styled.div`
   }
 `;
 
-export const Tags: VFC = () => (
+export const Tags: VFC<TagsProps> = ({ items }) => (
   <Wrapper>
-    <span style={{ backgroundColor: colors.Orange }} >新商品</span>
-    <span style={{ backgroundColor: colors.Red }} >期間限定</span>
-    <span style={{ backgroundColor: colors.YumeGreen }} >特別商品</span>
+    {items.map(item => <span style={{ backgroundColor: item.color }} > { item.name } </span>)}
   </Wrapper>
 );
