@@ -1,0 +1,36 @@
+name: build check
+
+on:
+  push:
+    branches: ['main']
+  pull_request:
+    branches: ['main']
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.13.1'
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        id: node_modules_cache_id
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-npm-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+      - name: Install npm package
+        if: ${{ steps.node_modules_cache_id.outputs.cache-hit != 'true' }}
+        run: yarn add
+      - name: format
+        run: yarn run prettier src/* -c
+      - name: lint
+        run: yarn run lint
+      - name: test
+        run: yarn run test
+      - name: build
+        run: yarn run build
