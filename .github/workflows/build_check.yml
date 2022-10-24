@@ -23,9 +23,9 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-npm-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-      - name: Install npm package
+      - name: Install package
         if: ${{ steps.node_modules_cache_id.outputs.cache-hit != 'true' }}
-        run: yarn add
+        run: yarn
       - name: format
         run: yarn run prettier src/* -c
       - name: lint
