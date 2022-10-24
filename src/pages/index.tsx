@@ -7,7 +7,7 @@ const Home: NextPage = () => (
     <p>とりあえずのキャンペーン部分</p>
     <HStack m={10}>
       {Array.from({ length: 5 }, (v, k) => k).map(() => (
-        <CampaignCard />
+        <CampaignCard campaignPath="/campaign" />
       ))}
     </HStack>
   </Box>
