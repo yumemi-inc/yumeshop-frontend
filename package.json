@@ -11,7 +11,8 @@
     "fix": "yarn format && yarn lint:fix",
     "storybook": "start-storybook -p 6006 -s ./public",
     "build-storybook": "build-storybook -s public",
-    "test": "jest"
+    "test:unit": "jest",
+    "test:e2e": "playwright test --project=chromium"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.3.6",
