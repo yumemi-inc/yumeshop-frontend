@@ -22,6 +22,8 @@ jobs:
       - uses: actions/upload-artifact@v3
         if: always()
         with:
-          name: playwright-report
-          path: playwright-report/
+          name: playwright-report.zip
+          path: |
+            playwright-report/index.html
+            playwright-report/top-page.png
           retention-days: 30
