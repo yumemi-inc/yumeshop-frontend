@@ -18,12 +18,12 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: Run Playwright tests
-        run: npx playwright test
+        run: yarn run test:e2e
       - uses: actions/upload-artifact@v3
         if: always()
         with:
           name: playwright-report.zip
           path: |
             playwright-report/index.html
-            playwright-report/top-page.png
+            top-page.png
           retention-days: 30

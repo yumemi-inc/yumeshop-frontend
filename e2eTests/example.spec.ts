@@ -6,7 +6,7 @@ test.beforeEach(async ({ page }) => {
 
 test.describe('', () => {
   test('can go to campaign page', async ({ page }) => {
-    await page.screenshot({ path: 'playwright-report/top-page.png' });
+    await page.screenshot({ path: 'top-page.png' });
     await page.locator('data-testid=campaign-card-1').first().click();
     await expect(page).toHaveURL('http://localhost:3000/campaign');
   });
