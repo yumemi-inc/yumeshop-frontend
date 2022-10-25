@@ -26,4 +26,5 @@ jobs:
           path: |
             playwright-report/index.html
             top-page.png
+            google.png
           retention-days: 30
