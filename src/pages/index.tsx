@@ -8,7 +8,7 @@ const Home: NextPage = () => (
     <p>とりあえずのキャンペーン部分</p>
     <HStack m={10}>
       {Array.from({ length: 5 }, (v, k) => k).map((k) => (
-        <Link href="/campaign">
+        <Link href="/campaign" key={k}>
           <a data-testid={`campaign-card-${k}`}>
             <CampaignCard />
           </a>
