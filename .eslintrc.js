@@ -20,6 +20,12 @@ module.exports = {
   rules: {
     'react/react-in-jsx-scope': 'off',
     "jsx-a11y/anchor-is-valid": [ "off"],
+    'no-restricted-imports': [
+      'error',
+      {
+        patterns: ['@/features/*/*'],
+      },
+    ],
     'import/extensions': [
       'error',
       'ignorePackages',
