@@ -11,7 +11,8 @@
     "fix": "yarn format && yarn lint:fix",
     "storybook": "start-storybook -p 6006 -s ./public",
     "build-storybook": "build-storybook -s public",
-    "test": "jest"
+    "test:unit": "jest",
+    "test:e2e": "playwright test --project=chromium"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.3.6",
@@ -24,6 +25,7 @@
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^12.1.0",
+    "@playwright/test": "^1.27.1",
     "@storybook/addon-actions": "^6.4.14",
     "@storybook/addon-essentials": "^6.4.19",
     "@storybook/addon-links": "^6.4.14",
