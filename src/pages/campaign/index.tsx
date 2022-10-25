@@ -7,7 +7,9 @@ const Campaign: NextPage = () => {
   return (
     <HStack m={10}>
       <p>こちらはキャンペーンページです。</p>
-      <Button onClick={() => router.back()}>戻る</Button>
+      <Button data-testid="campaign_go-back" onClick={() => router.back()}>
+        戻る
+      </Button>
     </HStack>
   );
 };
