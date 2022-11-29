@@ -1,0 +1,1224 @@
+openapi: 3.0.0
+info:
+  title: yumeshop
+  version: '1.0'
+  description: yumeshopのAPIが定義されています。
+  contact: {}
+servers:
+  - url: 'http://localhost:3000'
+    description: dev mock server
+tags:
+  - name: shop_items
+    description: 商品に関するAPI
+  - name: categories
+    description: カテゴリに関するAPI
+  - name: campaigns
+    description: キャンペーンに関するAPI
+  - name: informations
+    description: お知らせに関するAPI
+  - name: promotions
+    description: プロモーションに関するAPI
+  - name: tags
+    description: タグに関するAPI
+paths:
+  /shop_items:
+    get:
+      summary: Get shop items
+      tags:
+        - shop_items
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ShopItem'
+              examples:
+                example-1:
+                  value:
+                    - id: 57c3ff77-d8bd-41bb-86e3-4526e1b2186c
+                      name: ボールペン
+                      thumbnail: 'https://picsum.photos/300/200'
+                      price:
+                        selling_price: 100
+                        original_price: 200
+                        discounted: true
+                        discount_percentage: 50
+                        discount_amount: 100
+                      tags:
+                        - id: 57c3ff77-d8bd-41bb-86e3-4526e1b2186c
+                          name: 文房具
+                          color: green
+                          tag_group: shop_item
+                      categories: []
+                      campaigns: []
+          headers: {}
+      operationId: get-shop_items
+      description: ショップアイテムのリストを取得する
+      parameters:
+        - schema:
+            type: string
+            format: uuid
+          in: query
+          name: category_id
+          description: カテゴリIDによる絞り込み
+        - schema:
+            type: string
+            format: uuid
+          in: query
+          name: campaign_id
+          description: キャンペーンIDによる絞り込み
+    parameters: []
+    post:
+      summary: Create Shop Item
+      tags:
+        - shop_items
+      operationId: post-shop_items
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ShopItemDetail'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ShopItemPostParams'
+        description: ''
+      description: ショップアイテムを追加する
+  '/shop_items/{id}':
+    get:
+      summary: Get Shop Item Detail
+      tags:
+        - shop_items
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ShopItemDetail'
+              examples:
+                example-1:
+                  value:
+                    id: 57c3ff77-d8bd-41bb-86e3-4526e1b2186c
+                    name: シャープペンシル
+                    thumbnail: 'https://picsum.photos/300/200'
+                    price:
+                      selling_price: 100
+                      original_price: 200
+                      discounted: true
+                      discount_amount: 100
+                      discount_percentage: 50
+                    tags:
+                      - id: 57c3ff77-d8bd-41bb-86e3-4526e1b2186c
+                        name: 文房具
+                        color: green
+                        tag_group: shop_item
+                    categories: []
+                    campaigns: []
+                    details:
+                      - header: 最高の書き心地
+                        content: |-
+                          素晴らしい機構を持ったシャープペンシルで最高の書き心地を実現しました。
+                          この素晴らしいシャープペンシルが今ならなんと100円で販売中！
+                    images:
+                      - 'https://picsum.photos/300/200'
+                      - 'https://picsum.photos/300/200'
+                      - 'https://picsum.photos/300/200'
+                    related_shop_items:
+                      - id: 57c3ff77-d8bd-41bb-86e3-4526e1b2186c
+                        name: ボールペン
+                        thumbnail: 'https://picsum.photos/300/200'
+                        price:
+                          selling_price: 100
+                          original_price: 200
+                          discounted: true
+                          discount_percentage: 50
+                          discount_amount: 100
+                        tags: []
+                        categories: []
+                        campaigns: []
+      operationId: get-shop_item
+      description: ショップアイテム1件分の詳細を取得する
+    parameters:
+      - schema:
+          type: string
+          format: uuid
+        name: id
+        in: path
+        required: true
+        description: ShopItemのID
+    put:
+      summary: Update Shop Item
+      tags:
+        - shop_items
+      operationId: put-shop_item-id
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ShopItemDetail'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ShopItemPutParams'
+        description: ''
+      description: ショップアイテムを更新する
+    delete:
+      summary: Delete Shop Item
+      tags:
+        - shop_items
+      operationId: delete-shop_item-id
+      responses:
+        '204':
+          description: Resource deleted successfully.
+      description: ショップアイテムを削除する
+  /categories:
+    get:
+      summary: Get Categories
+      tags:
+        - categories
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Category'
+              examples:
+                example-1:
+                  value:
+                    - id: 57c3ff77-d8bd-41bb-86e3-4526e1b2186c
+                      name: 文房具
+                      thumbnail: 'https://picsum.photos/300/200'
+                    - id: 57c3ff77-d8bd-41bb-86e3-4526e1b2186d
+                      name: キャンプ用品
+                      thumbnail: 'https://picsum.photos/300/200'
+      operationId: get-category
+      description: カテゴリのリストを取得
+    parameters: []
+    post:
+      summary: Create Category
+      tags:
+        - categories
+      operationId: post-categories
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Category'
+      description: カテゴリを追加する
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CategoryPostParams'
+  '/categories/{id}':
+    parameters:
+      - schema:
+          type: string
+          format: uuid
+        name: id
+        in: path
+        required: true
+    put:
+      summary: Update Category
+      tags:
+        - categories
+      operationId: put-categories-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Category'
+      description: カテゴリを更新する
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CategoryPutParams'
+    delete:
+      summary: Delete Category
+      tags:
+        - categories
+      operationId: delete-categories-id
+      responses:
+        '204':
+          description: Resource deleted successfully.
+      description: カテゴリを削除する
+  /campaigns:
+    get:
+      summary: Get Campaigns
+      tags:
+        - campaigns
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Campaign'
+              examples:
+                example-1:
+                  value:
+                    - id: 57c3ff77-d8bd-41bb-86e3-4526e1b2186c
+                      name: 文房具セール
+                      thumbnail: 'https://picsum.photos/300/200'
+                    - id: 57c3ff77-d8bd-41bb-86e3-4526e1b2186d
+                      name: キャンプ用品セール
+                      thumbnail: 'https://picsum.photos/300/200'
+      operationId: get-campaigns
+      description: キャンペーンのリストを取得する
+    post:
+      summary: Create Campaign
+      tags:
+        - campaigns
+      operationId: post-campaigns
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Campaign'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CampaignPostParams'
+      description: キャンペーンを追加する
+  '/campaigns/{id}':
+    parameters:
+      - schema:
+          type: string
+          format: uuid
+        name: id
+        in: path
+        required: true
+    put:
+      summary: Update Campaign
+      tags:
+        - campaigns
+      operationId: put-campaigns-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Campaign'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CampaignPutParams'
+      description: キャンペーンを更新する
+    delete:
+      summary: Delete Campaign
+      tags:
+        - campaigns
+      operationId: delete-campaigns-id
+      responses:
+        '204':
+          description: Resource deleted successfully.
+      description: キャンペーンを削除する
+  /informations:
+    get:
+      summary: Get Informations
+      tags:
+        - informations
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Information'
+              examples:
+                example-1:
+                  value:
+                    - id: 57c3ff77-d8bd-41bb-86e3-4526e1b2186c
+                      title: メンテナンスのお知らせ
+                      detail: |-
+                        本日の19:00からメンテナンスのため、一時間ほどのサービス停止を予定しています。
+                        再開しだいメールにてアナウンスさせていただきます。
+                        ご迷惑をおかけしますが、ご理解ご協力のほどをよろしくお願いいたします。
+                      tags:
+                        - id: 57c3ff77-d8bd-41bb-86e3-4526e1b2186c
+                          name: 重要
+                          color: red
+                          tag_group: information
+                        - id: 57c3ff77-d8bd-41bb-86e3-4526e1b2186d
+                          name: メンテナンス
+                          color: yellow
+                          tag_group: information
+                      announced_at: '2017-07-21T17:32:28Z'
+      operationId: get-information
+      description: お知らせのリストを取得する
+    parameters: []
+    post:
+      summary: Create Information
+      tags:
+        - informations
+      operationId: post-informations
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Information'
+      description: お知らせを追加する
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InformationPostParams'
+  '/informations/{id}':
+    parameters:
+      - schema:
+          type: string
+          format: uuid
+        name: id
+        in: path
+        required: true
+    put:
+      summary: Update Information
+      tags:
+        - informations
+      operationId: put-informations-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Information'
+      description: お知らせを更新する
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InformationPutParams'
+    delete:
+      summary: Delete Information
+      tags:
+        - informations
+      operationId: delete-informations-id
+      responses:
+        '204':
+          description: Resource deleted successfully.
+      description: お知らせを削除する
+  /promotions:
+    get:
+      summary: Get Promotions
+      tags:
+        - promotions
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Promotion'
+              examples:
+                example-1:
+                  value:
+                    - id: 57c3ff77-d8bd-41bb-86e3-4526e1b2186c
+                      title: 春の大感謝祭
+                      image: 'https://picsum.photos/600/600'
+                      detail: |-
+                        春の大感謝祭セール開催中！
+                        期間中最大50%OFF!!
+                      link: 'https://example.com/'
+      operationId: get-promotions
+      description: プロモーションのリストを取得する
+    post:
+      summary: Create Promotion
+      tags:
+        - promotions
+      operationId: post-promotions
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Promotion'
+      description: プロモーションを追加する
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PromotionPostParams'
+  '/promotions/{id}':
+    parameters:
+      - schema:
+          type: string
+          format: uuid
+        name: id
+        in: path
+        required: true
+    put:
+      summary: Update Promotion
+      tags:
+        - promotions
+      operationId: put-promotions-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Promotion'
+      description: プロモーションを更新する
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PromotionPutParams'
+        description: ''
+    delete:
+      summary: Delete Promotion
+      tags:
+        - promotions
+      operationId: delete-promotions-id
+      responses:
+        '204':
+          description: Resource deleted successfully.
+      description: プロモーションを削除する
+  /tags:
+    get:
+      summary: Get Tags
+      tags:
+        - tags
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag'
+      operationId: get-tags
+      description: タグのリストを取得する
+      parameters:
+        - schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/TagGroup'
+            example:
+              - shop_item
+              - information
+          in: query
+          name: tag_group
+          description: タググループによる絞り込み(複数指定可)
+    post:
+      summary: Create Tag
+      tags:
+        - tags
+      operationId: post-tags
+      responses:
+        '200':
+          description: OK
+      description: タグの追加をする
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TagPostParams'
+  '/tags/{id}':
+    parameters:
+      - schema:
+          type: string
+          format: uuid
+        name: id
+        in: path
+        required: true
+        description: タグのid
+    put:
+      summary: Update Tag
+      tags:
+        - tags
+      operationId: put-tags-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tag'
+      description: タグの更新をする
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TagPutParams'
+    delete:
+      summary: Delete Tag
+      tags:
+        - tags
+      operationId: delete-tags-id
+      responses:
+        '204':
+          description: Resource deleted successfully.
+      description: タグの削除をする
+components:
+  schemas:
+    Price:
+      title: Price
+      type: object
+      description: 値段の情報のmodel
+      x-examples:
+        example-1:
+          value:
+            selling_price: 100
+            original_price: 200
+            discounted: true
+            discount_amount: 100
+            discount_percentage: 50
+      properties:
+        selling_price:
+          type: integer
+          description: 割引後の販売価格
+        original_price:
+          type: integer
+          description: 元の値段
+        discounted:
+          type: boolean
+          description: 割引が適応されているか
+        discount_amount:
+          type: integer
+          description: 割引の総量
+        discount_percentage:
+          type: number
+          description: '割引の割合(0-100[%])'
+      required:
+        - selling_price
+        - original_price
+        - discounted
+        - discount_amount
+        - discount_percentage
+    ShopItem:
+      title: ShopItem
+      type: object
+      x-examples:
+        example-1:
+          value:
+            id: 57c3ff77-d8bd-41bb-86e3-4526e1b2186c
+            name: ボールペン
+            thumbnail: 'https://picsum.photos/300/200'
+            price:
+              selling_price: 100
+              original_price: 200
+              discounted: true
+              percentage: 50
+              discount_amount: 100
+            tags: []
+            categories: []
+            campaigns: []
+      description: ショップアイテムのmodel
+      properties:
+        id:
+          type: string
+          description: id
+          format: uuid
+        name:
+          type: string
+          description: 商品の名前
+        thumbnail:
+          type: string
+          description: 商品のサムネイル画像のURL
+        price:
+          $ref: '#/components/schemas/Price'
+        tags:
+          type: array
+          description: タグの配列
+          items:
+            $ref: '#/components/schemas/Tag'
+        categories:
+          type: array
+          description: カテゴリの配列
+          items:
+            $ref: '#/components/schemas/Category'
+        campaigns:
+          type: array
+          description: キャンペーンの配列
+          items:
+            $ref: '#/components/schemas/Campaign'
+      required:
+        - id
+        - name
+        - thumbnail
+        - price
+        - tags
+        - categories
+        - campaigns
+    ShopItemDetail:
+      title: ShopItemDetail
+      type: object
+      x-examples:
+        example-1:
+          value:
+            id: 57c3ff77-d8bd-41bb-86e3-4526e1b2186c
+            name: ボールペン
+            thumbnail: 'https://picsum.photos/300/200'
+            price:
+              selling_price: 100
+              original_price: 200
+              discounted: true
+              discount_amount: 100
+              percentage: 50
+            tags:
+              - id: 57c3ff77-d8bd-41bb-86e3-4526e1b2186c
+                name: 文房具
+                color: green
+              - id: 57c3ff77-d8bd-41bb-86e3-4526e1b2186d
+                name: セール中
+                color: red
+            categories: []
+            campaigns: []
+            details:
+              - header: 素晴らしい書き心地
+                content: |-
+                  最新の機能を搭載したボールペンは素晴らしい書き心地です。
+                  今ならなんと、50% OFFで100円でお買い求めいただけます！
+            images:
+              - string
+            related_shop_items:
+              - id: 57c3ff77-d8bd-41bb-86e3-4526e1b2186c
+                name: シャープペンシル
+                image: 'https://picsum.photos/300/200'
+                price:
+                  selling_price: 300
+                  original_price: 400
+                  discounted: true
+                  discount_amount: 100
+                  percentage: 25
+                tags:
+                  - id: 57c3ff77-d8bd-41bb-86e3-4526e1b2186c
+                    name: 文房具
+                    color: green
+                  - id: 57c3ff77-d8bd-41bb-86e3-4526e1b2186d
+                    name: セール中
+                    color: red
+      description: 商品の詳細情報のmodel
+      properties:
+        id:
+          type: string
+          description: id
+          format: uuid
+        name:
+          type: string
+          description: 商品の名前
+        thumbnail:
+          type: string
+          description: サムネイル画像のURL
+        price:
+          $ref: '#/components/schemas/Price'
+        tags:
+          type: array
+          description: タグの配列
+          items:
+            $ref: '#/components/schemas/Tag'
+        categories:
+          type: array
+          description: カテゴリのの配列
+          items:
+            $ref: '#/components/schemas/Category'
+        campaigns:
+          type: array
+          description: キャンペーンの配列
+          items:
+            $ref: '#/components/schemas/Campaign'
+        details:
+          type: array
+          description: 商品の詳細
+          items:
+            $ref: '#/components/schemas/DetailContent'
+        images:
+          type: array
+          description: 画像のURLの配列
+          items:
+            type: string
+        related_shop_items:
+          type: array
+          description: 関連商品の配列
+          items:
+            $ref: '#/components/schemas/ShopItem'
+      required:
+        - id
+        - name
+        - thumbnail
+        - price
+        - tags
+        - categories
+        - campaigns
+        - details
+        - images
+        - related_shop_items
+    DetailContent:
+      title: DetailContent
+      type: object
+      x-examples:
+        example-1:
+          value:
+            header: ヘッダー
+            content: 内容のテキスト
+      properties:
+        header:
+          type: string
+          description: ヘッダー
+        content:
+          type: string
+          description: 内容
+      required:
+        - header
+        - content
+    Category:
+      title: Category
+      type: object
+      description: カテゴリのmodel
+      x-examples:
+        examples-1:
+          value:
+            id: 57c3ff77-d8bd-41bb-86e3-4526e1b2186c
+            name: 文房具
+            thumbnail: 'https://picsum.photos/300/200'
+      properties:
+        id:
+          type: string
+          description: id
+          format: uuid
+        name:
+          type: string
+          description: カテゴリの名前
+        thumbnail:
+          type: string
+          description: カテゴリのサムネイル画像のURL
+      required:
+        - id
+        - name
+        - thumbnail
+    Campaign:
+      title: Campaign
+      type: object
+      x-examples:
+        example-1:
+          value:
+            id: 57c3ff77-d8bd-41bb-86e3-4526e1b2186c
+            name: 文房具セール
+            thumbnail: 'https://picsum.photos/300/200'
+      properties:
+        id:
+          type: string
+          description: id
+          format: uuid
+        name:
+          type: string
+          description: キャンペーンの名前
+        thumbnail:
+          type: string
+          description: キャンペーンのサムネイル画像のURL
+      required:
+        - id
+        - name
+        - thumbnail
+    Promotion:
+      title: Promotion
+      type: object
+      x-examples:
+        example-1:
+          value:
+            id: 57c3ff77-d8bd-41bb-86e3-4526e1b2186c
+            title: 春の大感謝祭
+            image: 'https://picsum.photos/600/600'
+            detail: string
+            link: string
+      properties:
+        id:
+          type: string
+          description: id
+          format: uuid
+        title:
+          type: string
+          description: プロモーションのタイトル
+        image:
+          type: string
+          description: プロモーションの画像のURL
+        detail:
+          type: string
+          description: プロモーションの詳細
+        link:
+          type: string
+          description: プロモーションのリンクのURL
+      required:
+        - id
+        - title
+        - image
+        - detail
+        - link
+    Information:
+      title: Information
+      type: object
+      x-examples:
+        example-1:
+          value:
+            id: 57c3ff77-d8bd-41bb-86e3-4526e1b2186c
+            title: メンテナンスのお知らせ
+            detail: |-
+              本日の19:00からメンテナンスのため、一時間ほどのサービス停止を予定しています。
+              再開しだいメールにてアナウンスさせていただきます。
+              ご迷惑をおかけしますが、ご理解ご協力のほどをよろしくお願いいたします。
+            tags:
+              - id: 57c3ff77-d8bd-41bb-86e3-4526e1b2186c
+                name: 重要
+                color: red
+              - id: 57c3ff77-d8bd-41bb-86e3-4526e1b2186d
+                name: メンテナンス
+                color: yellow
+      description: お知らせのmodel
+      properties:
+        id:
+          type: string
+          format: uuid
+        title:
+          type: string
+        detail:
+          type: string
+        tags:
+          type: array
+          items:
+            $ref: '#/components/schemas/Tag'
+        announced_at:
+          type: string
+      required:
+        - id
+        - title
+        - detail
+        - tags
+        - announced_at
+    Tag:
+      title: Tag
+      type: object
+      x-examples:
+        example-1:
+          value:
+            id: 57c3ff77-d8bd-41bb-86e3-4526e1b2186c
+            name: string
+            color: string
+            tag_group: shop_item
+      properties:
+        id:
+          type: string
+          description: id
+          format: uuid
+        name:
+          type: string
+          description: タグの名称
+        color:
+          type: string
+          description: html5でcolorとして扱える文字列
+        tag_group:
+          $ref: '#/components/schemas/TagGroup'
+      required:
+        - id
+        - name
+        - color
+        - tag_group
+    TagGroup:
+      type: string
+      title: TagGroup
+      enum:
+        - shop_item
+        - information
+      description: |-
+        タグのグループを表すenum
+        shop_item: 商品のタググループ
+        information: お知らせのタググループ
+    ShopItemPostParams:
+      title: ShopItemPostParams
+      type: object
+      properties:
+        name:
+          type: string
+          description: 商品の名前
+        thumbnail:
+          type: string
+          description: 商品のサムネイル画像のURL
+        selling_price:
+          type: integer
+          description: 販売価格
+        original_price:
+          type: integer
+          description: 元の値段
+        tags:
+          type: array
+          description: タグのidの配列
+          items:
+            type: string
+            format: uuid
+        categories:
+          type: array
+          description: カテゴリのidの配列
+          items:
+            type: string
+            format: uuid
+        campaigns:
+          type: array
+          description: キャンペーンのidの配列
+          items:
+            type: string
+            format: uuid
+        details:
+          type: array
+          description: 商品の詳細
+          items:
+            $ref: '#/components/schemas/DetailContent'
+        images:
+          type: array
+          description: 画像URLの配列
+          items:
+            type: string
+        related_shop_items:
+          type: array
+          description: 関連商品のidの配列
+          items:
+            type: string
+            format: uuid
+      required:
+        - name
+        - thumbnail
+        - selling_price
+        - original_price
+        - tags
+        - categories
+        - campaigns
+        - details
+        - images
+        - related_shop_items
+    ShopItemPutParams:
+      title: ShopItemPutParams
+      type: object
+      properties:
+        name:
+          type: string
+          description: 商品の名前
+        thumbnail:
+          type: string
+          description: 商品のサムネイル画像のURL
+        selling_price:
+          type: integer
+          description: 販売価格
+        original_price:
+          type: integer
+          description: 元の値段
+        tags:
+          type: array
+          description: タグのidの配列
+          items:
+            type: string
+            format: uuid
+        categories:
+          type: array
+          description: カテゴリのidの配列
+          items:
+            type: string
+            format: uuid
+        campaigns:
+          type: array
+          description: キャンペーンのidの配列
+          items:
+            type: string
+            format: uuid
+        details:
+          type: array
+          description: 商品の詳細
+          items:
+            $ref: '#/components/schemas/DetailContent'
+        images:
+          type: array
+          description: 画像URLの配列
+          items:
+            type: string
+        related_shop_items:
+          type: array
+          description: 関連商品のidの配列
+          items:
+            type: string
+            format: uuid
+    CategoryPostParams:
+      title: CategoryPostParams
+      type: object
+      properties:
+        name:
+          type: string
+          description: カテゴリの名前
+        thumbnail:
+          type: string
+          description: カテゴリのサムネイル画像のURL
+      required:
+        - name
+        - thumbnail
+    CategoryPutParams:
+      title: CategoryPutParams
+      type: object
+      properties:
+        name:
+          type: string
+          description: カテゴリの名前
+        thumbnail:
+          type: string
+          description: カテゴリのサムネイル画像のURL
+    CampaignPostParams:
+      title: CampaignPostParams
+      type: object
+      properties:
+        name:
+          type: string
+          description: カテゴリの名前
+        thumbnail:
+          type: string
+          description: カテゴリのサムネイル画像のURL
+      required:
+        - name
+        - thumbnail
+    CampaignPutParams:
+      title: CampaignPutParams
+      type: object
+      properties:
+        name:
+          type: string
+          description: カテゴリの名前
+        thumbnail:
+          type: string
+          description: カテゴリのサムネイル画像のURL
+    InformationPostParams:
+      title: InformationPostParams
+      type: object
+      properties:
+        title:
+          type: string
+          description: お知らせのタイトル
+        detail:
+          type: string
+          description: お知らせの詳細
+        tags:
+          type: array
+          description: お知らせのタグ
+          items:
+            type: string
+            format: uuid
+        announced_at:
+          type: string
+          description: お知らせのアナウンスされた日時
+      required:
+        - title
+        - detail
+        - tags
+        - announced_at
+    InformationPutParams:
+      title: InformationPutParams
+      type: object
+      properties:
+        title:
+          type: string
+          description: お知らせのタイトル
+        detail:
+          type: string
+          description: お知らせの詳細
+        tags:
+          type: array
+          description: お知らせのタグ
+          items:
+            type: string
+            format: uuid
+        announced_at:
+          type: string
+          description: お知らせのアナウンスされた日時
+    PromotionPostParams:
+      title: PromotionPostParams
+      type: object
+      properties:
+        title:
+          type: string
+          description: プロモーションのタイトル
+        image:
+          type: string
+          description: プロモーションの画像のURL
+        detail:
+          type: string
+          description: プロモーションの詳細
+        link:
+          type: string
+          description: プロモーションのリンクのURL
+      required:
+        - title
+        - image
+        - detail
+        - link
+    PromotionPutParams:
+      title: PromotionPutParams
+      type: object
+      properties:
+        title:
+          type: string
+          description: プロモーションのタイトル
+        image:
+          type: string
+          description: プロモーションの画像のURL
+        detail:
+          type: string
+          description: プロモーションの詳細
+        link:
+          type: string
+          description: プロモーションのリンクのURL
+    TagPostParams:
+      title: TagPostParams
+      type: object
+      properties:
+        name:
+          type: string
+          description: タグの名前
+        color:
+          type: string
+          description: タグの色
+        tag_group:
+          $ref: '#/components/schemas/TagGroup'
+      required:
+        - name
+        - color
+        - tag_group
+    TagPutParams:
+      title: TagPutParams
+      type: object
+      properties:
+        name:
+          type: string
+          description: タグの名前
+        color:
+          type: string
+          description: タグの色
+  securitySchemes: {}
+  responses: {}
