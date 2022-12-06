@@ -11,6 +11,9 @@
     "fix": "yarn format && yarn lint:fix",
     "storybook": "start-storybook -p 6006 -s ./public",
     "build-storybook": "build-storybook -s public",
+    "mock": "prism mock schema/openapi.yaml -p 8080",
+    "mock:many": "yarn mock -d",
+    "generate": "rm -rf api && openapi2aspida -i schema/openapi.yaml",
     "test": "jest"
   },
   "dependencies": {
@@ -20,6 +23,7 @@
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^12.1.0",
+    "@stoplight/prism-cli": "^4.10.5",
     "@storybook/addon-actions": "^6.4.14",
     "@storybook/addon-essentials": "^6.4.19",
     "@storybook/addon-links": "^6.4.14",
@@ -43,6 +47,7 @@
     "eslint-plugin-storybook": "^0.6.6",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.5.1",
+    "openapi2aspida": "^0.21.0",
     "prettier": "^2.5.1",
     "ress": "^5.0.2",
     "styled-components": "^5.3.3",

@@ -26,15 +26,18 @@
 
 ## npm scripts
 
-| command         | description                                            |
-| :-------------- | :----------------------------------------------------- |
-| dev             | 開発モードでアプリケーションを起動                     |
-| build           | アプリケーションのビルド                               |
-| start           | ビルド済みアプリケーションをプロダクションモードで起動 |
-| lint            | eslint の実行                                          |
-| lint: fix       | eslint の実行と修正                                    |
-| format          | prettier の実行                                        |
-| fix             | format と lint:fix の実行                              |
-| storybook       | storybook の起動                                       |
-| build-storybook | storybook のビルド                                     |
-| test            | jest の実行                                            |
+| command         | description                                                        |
+| :-------------- | :----------------------------------------------------------------- |
+| dev             | 開発モードでアプリケーションを起動                                 |
+| build           | アプリケーションのビルド                                           |
+| start           | ビルド済みアプリケーションをプロダクションモードで起動             |
+| lint            | eslint の実行                                                      |
+| lint: fix       | eslint の実行と修正                                                |
+| format          | prettier の実行                                                    |
+| fix             | format と lint:fix の実行                                          |
+| storybook       | storybook の起動                                                   |
+| build-storybook | storybook のビルド                                                 |
+| mock            | mock サーバ起動（データ 1 件 または example に書いてあるもののみ） |
+| mock:many       | mock サーバ起動（データ件数たくさん）                              |
+| generate        | openapi.yaml を元に TypeScript の型と API クライアントを生成       |
+| test            | jest の実行                                                        |
