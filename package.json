@@ -46,7 +46,7 @@
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-react": "^7.29.0",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-storybook": "^0.6.6",
+    "eslint-plugin-storybook": "^0.6.8",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.5.1",
     "openapi2aspida": "^0.21.0",
