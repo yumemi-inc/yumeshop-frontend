@@ -48,7 +48,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-storybook": "^0.6.8",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^27.5.1",
+    "jest": "^29.3.1",
     "openapi2aspida": "^0.21.0",
     "prettier": "^2.5.1",
     "ress": "^5.0.2",
