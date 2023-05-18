@@ -9,7 +9,7 @@
     "lint:fix": "next lint --max-warnings 0 --fix",
     "format": "prettier --write --loglevel=warn '*/**/*.{js,jsx,ts,tsx,html,gql,graphql,json}'",
     "fix": "yarn format && yarn lint:fix",
-    "storybook": "storybook dev -p 6006 -s ./public",
+    "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build -s public",
     "mock": "prism mock schema/openapi.yaml -p 8080",
     "mock:many": "yarn mock -d",
