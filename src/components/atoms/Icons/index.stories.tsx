@@ -1,11 +1,14 @@
-import type { Meta, Story } from '@storybook/react/types-6-0';
-import { Logo } from './index';
+import { StoryObj, Meta } from '@storybook/react';
+import { Logo } from '.';
 
-export default {
-  component: Logo,
+const meta: Meta<typeof Logo> = {
   title: 'atoms/Logo',
-} as Meta;
+  component: Logo,
+};
 
-const Template: Story = () => <Logo />;
+export default meta;
 
-export const logo = Template.bind({});
+type Story = StoryObj<typeof Logo>;
+export const Default: Story = {
+  args: {},
+};

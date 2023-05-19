@@ -1,11 +1,14 @@
-import type { Meta, Story } from '@storybook/react/types-6-0';
-import { Header } from './index';
+import { StoryObj, Meta } from '@storybook/react';
+import { Header } from '.';
 
-export default {
-  component: Header,
+const meta: Meta<typeof Header> = {
   title: 'organisms/Header',
-} as Meta;
+  component: Header,
+};
 
-const Template: Story = () => <Header />;
+export default meta;
 
-export const header = Template.bind({});
+type Story = StoryObj<typeof Header>;
+export const Default: Story = {
+  args: {},
+};

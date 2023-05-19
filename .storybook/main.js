@@ -1,7 +1,6 @@
 const path = require('path');
-
 module.exports = {
-  stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
+  stories: ['../src/**/*.stories.@(js|jsx|ts|tsx)'],
   addons: ['@storybook/addon-links', '@storybook/addon-essentials'],
   webpackFinal: async (baseConfig) => {
     baseConfig.resolve.modules = [
@@ -10,7 +9,11 @@ module.exports = {
     ];
     return baseConfig;
   },
-  core: {
-    builder: 'webpack5',
+  framework: {
+    name: '@storybook/nextjs',
+    options: {},
+  },
+  docs: {
+    autodocs: true,
   },
 };
