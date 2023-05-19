@@ -21,6 +21,9 @@
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
+  "resolutions": {
+    "@types/react": "^18.2.0"
+  },
   "devDependencies": {
     "@next/eslint-plugin-next": "^13.0.7",
     "@stoplight/prism-cli": "^4.10.5",
@@ -33,7 +36,7 @@
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^13.4.0",
     "@types/node": "18.11.9",
-    "@types/react": "17.0.39",
+    "@types/react": "18.2.0",
     "@types/styled-components": "^5.1.23",
     "@typescript-eslint/eslint-plugin": "^5.47.0",
     "@typescript-eslint/parser": "^5.56.0",
