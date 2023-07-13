@@ -5,7 +5,7 @@
 ## Requirements
 
 - Yarn
-- Node.js 16.13.1
+- Node.js 18.16.1
 
 ## Usage
 
@@ -13,7 +13,7 @@
 
 ## Development environment
 
-- [Node.js](https://nodejs.org/ja/)(v16.13.1)
+- [Node.js](https://nodejs.org/ja/)(v18.16.1)
 - [Yarn](https://yarnpkg.com/)
 - [Next.js](https://nextjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
