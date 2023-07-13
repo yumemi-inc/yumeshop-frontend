@@ -1,4 +1,3 @@
-import { VFC } from 'react';
 import styled from 'styled-components';
 import { Logo } from 'src/components/atoms/Icons/logo';
 import { colors } from 'src/styles/Tokens';
@@ -14,7 +13,7 @@ const Wrapper = styled.header`
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 `;
 
-export const Header: VFC = () => (
+export const Header = (): JSX.Element => (
   <Wrapper>
     <Link href="/" passHref>
       <Logo />

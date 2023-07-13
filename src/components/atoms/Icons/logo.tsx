@@ -1,6 +1,4 @@
-import { VFC } from 'react';
-
-export const Logo: VFC = () => (
+export const Logo = (): JSX.Element => (
   <svg
     width="113"
     height="29"

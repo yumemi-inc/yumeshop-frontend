@@ -1,11 +1,9 @@
-import { VFC } from 'react';
-
 interface HeadlineProps {
   label: string;
   headlineTypes: 'small' | 'middle' | 'large';
 }
 
-export const Headline: VFC<HeadlineProps> = (props) => {
+export const Headline = (props: HeadlineProps): JSX.Element => {
   const { label, headlineTypes } = props;
 
   return (
