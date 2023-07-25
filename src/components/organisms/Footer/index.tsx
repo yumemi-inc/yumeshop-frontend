@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors } from 'src/styles/Tokens';
+import { colors } from 'src/styles/tokens';
 
 const Wrapper = styled.footer`
   width: 100%;

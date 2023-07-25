@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Logo } from 'src/components/atoms/Icons/logo';
-import { colors } from 'src/styles/Tokens';
+import { colors } from 'src/styles/tokens';
 import Link from 'next/link';
 
 const Wrapper = styled.header`
