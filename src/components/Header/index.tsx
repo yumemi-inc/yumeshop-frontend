@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 import { Logo } from 'src/components/Icons/logo';
 import { colors } from 'src/styles/tokens';
 import Link from 'next/link';
