@@ -1,8 +1,8 @@
-import { createGlobalStyle } from 'styled-components';
+import { css } from '@emotion/react';
 import { fonts } from './tokens';
 import 'ress';
 
-export default createGlobalStyle`
+export default css`
   html,
   body {
     padding: 0;
