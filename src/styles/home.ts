@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors } from './Tokens';
+import { colors } from './tokens';
 
 export const TokenTest = styled.div`
   background: ${colors.YumeGreen};

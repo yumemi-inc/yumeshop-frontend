@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { fonts } from './Tokens';
+import { fonts } from './tokens';
 import 'ress';
 
 export default createGlobalStyle`
