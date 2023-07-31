@@ -7,17 +7,23 @@ module.exports = {
     node: true,
   },
   extends: [
-    'plugin:react/recommended',
-    'airbnb',
-    'airbnb/hooks',
+    'eslint:recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
     'plugin:@typescript-eslint/recommended',
-    'plugin:@next/next/recommended',
+    'next/core-web-vitals',
     'plugin:storybook/recommended',
     'prettier',
   ],
   rules: {
+    'import/order': [
+      'error',
+      {
+        alphabetize: {
+          order: 'asc',
+        },
+      },
+    ],
     'react/react-in-jsx-scope': 'off',
     'import/extensions': [
       'error',
@@ -29,25 +35,12 @@ module.exports = {
         tsx: 'never',
       },
     ],
-    '@typescript-eslint/no-unused-vars': [
-      'error',
-      {
-        vars: 'all',
-        args: 'after-used',
-        argsIgnorePattern: '_',
-        ignoreRestSiblings: false,
-        varsIgnorePattern: '_',
-      },
-    ],
-    'react/function-component-definition': 'off',
-    'import/prefer-default-export': 'off',
     'react/jsx-filename-extension': [
       'error',
       {
         extensions: ['.jsx', '.tsx'],
       },
     ],
-    'react/jsx-props-no-spreading': 'off',
     'import/no-extraneous-dependencies': [
       'error',
       {
