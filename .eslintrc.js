@@ -24,7 +24,6 @@ module.exports = {
         },
       },
     ],
-    'react/react-in-jsx-scope': 'off',
     'import/extensions': [
       'error',
       'ignorePackages',
@@ -33,6 +32,16 @@ module.exports = {
         jsx: 'never',
         ts: 'never',
         tsx: 'never',
+      },
+    ],
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        vars: 'all',
+        args: 'after-used',
+        argsIgnorePattern: '_',
+        ignoreRestSiblings: false,
+        varsIgnorePattern: '_',
       },
     ],
     'react/jsx-filename-extension': [
