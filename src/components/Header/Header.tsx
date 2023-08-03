@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
-import { Logo } from 'src/components/Icons/logo';
+import { Logo } from 'src/components/Icons/Logo';
 import { colors } from 'src/styles/tokens';
 
 const Wrapper = styled.header`
