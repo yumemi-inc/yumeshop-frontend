@@ -12,7 +12,6 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build -s public",
     "mock": "prism mock schema/openapi.yaml -p 8080",
-    "mock:many": "yarn mock -d",
     "generate": "rm -rf api && openapi2aspida -i schema/openapi.yaml",
     "test": "jest"
   },
