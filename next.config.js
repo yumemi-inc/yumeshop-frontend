@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
+  pageExtensions: ['ts', 'tsx', 'mdx', 'test.tsx'],
   reactStrictMode: true,
   images: {
     remotePatterns: [
