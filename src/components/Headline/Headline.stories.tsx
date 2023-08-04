@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Headline } from './index';
+import { Headline } from './Headline';
 
 const meta: Meta<typeof Headline> = {
   title: 'atoms/Headline',
