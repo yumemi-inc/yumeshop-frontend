@@ -38,6 +38,5 @@
 | storybook       | storybook の起動                                                   |
 | build-storybook | storybook のビルド                                                 |
 | mock            | mock サーバ起動（データ 1 件 または example に書いてあるもののみ） |
-| mock:many       | mock サーバ起動（データ件数たくさん）                              |
 | generate        | openapi.yaml を元に TypeScript の型と API クライアントを生成       |
 | test            | jest の実行                                                        |
