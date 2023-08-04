@@ -7,18 +7,23 @@ module.exports = {
     node: true,
   },
   extends: [
-    'plugin:react/recommended',
-    'airbnb',
-    'airbnb/hooks',
+    'eslint:recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
     'plugin:@typescript-eslint/recommended',
-    'plugin:@next/next/recommended',
+    'next/core-web-vitals',
     'plugin:storybook/recommended',
     'prettier',
   ],
   rules: {
-    'react/react-in-jsx-scope': 'off',
+    'import/order': [
+      'error',
+      {
+        alphabetize: {
+          order: 'asc',
+        },
+      },
+    ],
     'import/extensions': [
       'error',
       'ignorePackages',
@@ -39,37 +44,37 @@ module.exports = {
         varsIgnorePattern: '_',
       },
     ],
-    'react/function-component-definition': 'off',
-    'import/prefer-default-export': 'off',
     'react/jsx-filename-extension': [
       'error',
       {
         extensions: ['.jsx', '.tsx'],
       },
     ],
-    'react/jsx-props-no-spreading': 'off',
-    'import/no-extraneous-dependencies': ['error', {
-      // devDependenciesのimportを許容
-      devDependencies: true
-    }],
-    'storybook/prefer-pascal-case': 'off'
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        // devDependenciesのimportを許容
+        devDependencies: true,
+      },
+    ],
+    'storybook/prefer-pascal-case': 'off',
   },
   overrides: [
     {
-      'files': ['*.tsx'],
-      'rules': {
+      files: ['*.tsx'],
+      rules: {
         'react/prop-types': 'off',
       },
     },
   ],
-  "settings": {
-    "import/parsers": {
-      "@typescript-eslint/parser": [".ts", ".tsx"]
+  settings: {
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx'],
     },
-    "import/resolver": {
-      "typescript": {
-        "alwaysTryTypes": true,
-      }
-    }
-  }
+    'import/resolver': {
+      typescript: {
+        alwaysTryTypes: true,
+      },
+    },
+  },
 };

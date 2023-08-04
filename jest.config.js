@@ -5,7 +5,7 @@ module.exports = {
     '!**/node_modules/**',
   ],
   moduleNameMapper: {
-    "src(.*)$": "<rootDir>/src/$1",
+    'src(.*)$': '<rootDir>/src/$1',
     '^.+\\.module\\.(css|sass|scss)$': 'identity-obj-proxy',
   },
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
@@ -18,4 +18,4 @@ module.exports = {
     '^.+\\.module\\.(css|sass|scss)$',
   ],
   testEnvironment: 'jest-environment-jsdom',
-}
+};

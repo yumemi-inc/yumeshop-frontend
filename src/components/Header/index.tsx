@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
+import Link from 'next/link';
 import { Logo } from 'src/components/Icons/logo';
 import { colors } from 'src/styles/tokens';
-import Link from 'next/link';
 
 const Wrapper = styled.header`
   width: 100%;
