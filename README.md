@@ -17,10 +17,8 @@
 - [Yarn](https://yarnpkg.com/)
 - [Next.js](https://nextjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [styled-components](https://styled-components.com/)
+- [emotion](https://emotion.sh/docs/introduction)
   - 好みに合わせて以下のライブラリを使用しても問題ありません
-    - [emotion](https://emotion.sh/docs/introduction)
-      - この開発には導入していません
     - [css(scss).modules](https://github.com/css-modules/css-modules)
       - [Next.js にビルドイン](https://nextjs.org/docs/basic-features/built-in-css-support#adding-component-level-css)されています。
 
