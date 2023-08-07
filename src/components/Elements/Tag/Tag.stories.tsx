@@ -12,7 +12,7 @@ type Story = StoryObj<typeof Tag>;
 export const Default: Story = {
   args: {
     id: '1',
-    name: 'tag',
+    name: '新商品',
     color: '#E89244',
     tag_group: 'shop_item',
   },

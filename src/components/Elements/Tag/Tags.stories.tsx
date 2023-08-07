@@ -14,20 +14,20 @@ export const Default: Story = {
     tags: [
       {
         id: '1',
-        name: 'tag',
+        name: '新商品',
         color: '#E89244',
         tag_group: 'shop_item',
       },
       {
         id: '2',
-        name: 'tag',
-        color: '#E89244',
+        name: '期間限定',
+        color: '#E20E20',
         tag_group: 'shop_item',
       },
       {
         id: '3',
-        name: 'tag',
-        color: '#E89244',
+        name: '特別価格',
+        color: '#40AF40',
         tag_group: 'shop_item',
       },
     ],
