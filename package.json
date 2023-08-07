@@ -21,7 +21,8 @@
     "@emotion/styled": "^11.11.0",
     "next": "13.0.5",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-query": "^3.39.3"
   },
   "resolutions": {
     "@types/react": "^18.2.0"
