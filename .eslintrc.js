@@ -74,6 +74,7 @@ module.exports = {
     'import/resolver': {
       typescript: {
         alwaysTryTypes: true,
+        project: './'
       },
     },
   },

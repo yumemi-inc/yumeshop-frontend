@@ -3,9 +3,10 @@
     "target": "es2022",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
-    "baseUrl": "./src",
+    "baseUrl": "./",
     "paths": {
-      "src/*": ["*"]
+      "src/*": ["src/*"],
+      "api/*": ["api/*"]
     },
     "skipLibCheck": true,
     "strict": true,
