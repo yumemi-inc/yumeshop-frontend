@@ -5,7 +5,8 @@
     "allowJs": true,
     "baseUrl": "./src",
     "paths": {
-      "src/*": ["*"]
+      "src/*": ["*"],
+      "api/*": ["api/*"]
     },
     "skipLibCheck": true,
     "strict": true,
@@ -19,6 +20,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "src/**/*"],
+  "include": ["next-env.d.ts", "src/**/*", "api/**/*"],
   "exclude": ["node_modules"]
 }
