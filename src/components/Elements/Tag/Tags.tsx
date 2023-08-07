@@ -1,6 +1,6 @@
-import { Tag as TagType } from '../../../../api/@types';
 import { Tag } from './Tag';
 import styles from './Tags.module.scss';
+import { Tag as TagType } from 'api/@types';
 
 export type TagsProps = { tags: TagType[] };
 

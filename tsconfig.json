@@ -3,9 +3,9 @@
     "target": "es2022",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
-    "baseUrl": "./src",
+    "baseUrl": "./",
     "paths": {
-      "src/*": ["*"],
+      "src/*": ["src/*"],
       "api/*": ["api/*"]
     },
     "skipLibCheck": true,
@@ -20,6 +20,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "src/**/*", "api/**/*"],
+  "include": ["next-env.d.ts", "src/**/*"],
   "exclude": ["node_modules"]
 }
