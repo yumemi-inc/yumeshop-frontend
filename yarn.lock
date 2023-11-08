@@ -4377,15 +4377,15 @@ arraybuffer.prototype.slice@^1.0.1:
     is-array-buffer "^3.0.2"
     is-shared-array-buffer "^1.0.2"
 
-aspida@^1.11.0:
-  version "1.12.0"
-  resolved "https://registry.yarnpkg.com/aspida/-/aspida-1.12.0.tgz#b5eb2bdade2123ceef0760eabf7d28957ec5b083"
-  integrity sha512-/5uJohv+laB14HJcRLdE0HHYhluB2g7nwuUu+JXvNU6OC06S5OvwYjiEnuDshYN+U+1fqkucoz/CWdYxbvl3JA==
+aspida@^1.13.3:
+  version "1.14.0"
+  resolved "https://registry.yarnpkg.com/aspida/-/aspida-1.14.0.tgz#13a99115a0b7831bd83ec8e97caa39105fd8fd2c"
+  integrity sha512-ZLwin6gvVUDGo66oWjSxVl5lVhfD1cTLln7m3qtsgrID3bwyUK4VCEMvlcOxXHtPeiCrcGyjgKWDHgbzhzM0TA==
   dependencies:
     "@types/minimist" "^1.2.2"
     chokidar "^3.5.3"
     form-data "^4.0.0"
-    minimist "^1.2.6"
+    minimist "^1.2.8"
 
 assert@^2.0.0:
   version "2.0.0"
@@ -6581,7 +6581,7 @@ fs-extra@11.1.1, fs-extra@^11.1.0:
     jsonfile "^6.0.1"
     universalify "^2.0.0"
 
-fs-extra@^10.0.0, fs-extra@^10.1.0:
+fs-extra@^10.0.0:
   version "10.1.0"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-10.1.0.tgz#02873cfbc4084dde127eaa5f9905eef2325d1abf"
   integrity sha512-oRXApq54ETRj4eMiFzGnHWGy+zo5raudjuxN0b8H7s/RU2oW0Wvsx9O0ACRN/kRq9E8Vu/ReskGB5o3ji+FzHQ==
@@ -8533,7 +8533,7 @@ minimist@1.2.6:
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.6.tgz#8637a5b759ea0d6e98702cfb3a9283323c93af44"
   integrity sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==
 
-minimist@^1.2.0, minimist@^1.2.5, minimist@^1.2.6:
+minimist@^1.2.0, minimist@^1.2.5, minimist@^1.2.6, minimist@^1.2.8:
   version "1.2.8"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.8.tgz#c1a464e7693302e082a075cee0c057741ac4772c"
   integrity sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==
@@ -8959,21 +8959,20 @@ open@^9.1.0:
     is-inside-container "^1.0.0"
     is-wsl "^2.2.0"
 
-openapi-types@^12.0.2:
-  version "12.1.0"
-  resolved "https://registry.yarnpkg.com/openapi-types/-/openapi-types-12.1.0.tgz#bd01acc937b73c9f6db2ac2031bf0231e21ebff0"
-  integrity sha512-XpeCy01X6L5EpP+6Hc3jWN7rMZJ+/k1lwki/kTmWzbVhdPie3jd5O2ZtedEx8Yp58icJ0osVldLMrTB/zslQXA==
+openapi-types@^12.1.3:
+  version "12.1.3"
+  resolved "https://registry.yarnpkg.com/openapi-types/-/openapi-types-12.1.3.tgz#471995eb26c4b97b7bd356aacf7b91b73e777dd3"
+  integrity sha512-N4YtSYJqghVu4iek2ZUvcN/0aqH1kRDuNqzcycDxhOUpg7GdvLa2F3DgS6yBNhInhv2r/6I0Flkn7CqL8+nIcw==
 
-openapi2aspida@^0.21.0:
-  version "0.21.0"
-  resolved "https://registry.yarnpkg.com/openapi2aspida/-/openapi2aspida-0.21.0.tgz#69a07cdc7ee34d5ac7062d6d8aa9cca78d160a58"
-  integrity sha512-zTY+LHtF6xTu4s0ImyItzUzLcw4gcMLVOYsuXKDY4N56eBpbLJoxl2RvPFP581brwLR/UV6Z8+f0znnxn0StGg==
+openapi2aspida@^0.23.2:
+  version "0.23.2"
+  resolved "https://registry.yarnpkg.com/openapi2aspida/-/openapi2aspida-0.23.2.tgz#69d0da259b6252f5d5457c6595eb525ae553457f"
+  integrity sha512-iIptg9CS9U+B7lWqZoI+HRPOVZSY+sxQtGL8wGJNoZVcrjdppGUaMA5xW/371o/yb90D2QBUr+Oo6O3BsG4Veg==
   dependencies:
     "@apidevtools/swagger-parser" "^10.1.0"
-    aspida "^1.11.0"
-    fs-extra "^10.1.0"
+    aspida "^1.13.3"
     js-yaml "^4.1.0"
-    openapi-types "^12.0.2"
+    openapi-types "^12.1.3"
     swagger2openapi "^7.0.8"
 
 openapi3-ts@^2.0.2:
