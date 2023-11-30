@@ -27,7 +27,7 @@
     "@types/react": "^18.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0",
+    "@babel/core": "^7.23.5",
     "@next/eslint-plugin-next": "^13.4.12",
     "@stoplight/prism-cli": "^4.10.5",
     "@storybook/addon-actions": "^7.0.12",
